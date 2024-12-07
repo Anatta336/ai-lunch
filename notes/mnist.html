@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MNIST Digit Recognition</title>
+    <!-- Import TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Draw a digit (0-9)</h1>
+    <canvas id="canvas" width="280" height="280"></canvas>
+    <br>
+    <button onclick="clearCanvas()">Clear</button>
+    <p>Prediction: <span id="prediction"></span></p>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        let isDrawing = false;
+
+        let model;
+        (async () => {
+            try {
+                model = await loadModel();
+                console.log('Model successfully loaded and initialized');
+            } catch (error) {
+                console.error('Failed to load model:', error);
+            }
+        })();
+
+        // Setup canvas for drawing
+        ctx.strokeStyle = 'white';
+        ctx.lineWidth = 20;
+        ctx.lineCap = 'round';
+        canvas.style.backgroundColor = 'black';
+
+        // Drawing event handlers
+        canvas.addEventListener('mousedown', startDrawing);
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mouseup', endDrawing);
+        canvas.addEventListener('mouseout', endDrawing);
+
+        async function loadModel() {
+            console.log('Loading model');
+            try {
+                // Load the model with explicit input shape configuration
+                const model = await tf.loadLayersModel('tfjs_model/model.json', {
+                    strict: true
+                });
+
+                console.log('Initial model loading complete');
+
+                // Verify the model has proper input shape for MNIST
+                const inputShape = model.inputs[0].shape;
+                console.log('Model loaded with input shape:', inputShape);
+
+                // Warm up the model with a dummy prediction
+                const dummyInput = tf.zeros([1, 28, 28, 1]);
+                const warmup = model.predict(dummyInput);
+                warmup.dispose();
+                dummyInput.dispose();
+
+                return model;
+            } catch (error) {
+                console.error('Error loading model:', error);
+                throw error;
+            }
+        }
+
+        function startDrawing(e) {
+            isDrawing = true;
+            draw(e);
+        }
+
+        function draw(e) {
+            if (!isDrawing) return;
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.lineTo(x, y);
+            ctx.stroke();
+
+            // Make prediction after each stroke
+            predict();
+        }
+
+        function endDrawing() {
+            isDrawing = false;
+            predict();
+        }
+
+        function clearCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            document.getElementById('prediction').textContent = '';
+        }
+
+        // Make prediction
+        async function predict() {
+            if (!model) return;
+
+            console.log('predicting');
+
+            // Get canvas data and transform it
+            let imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            let tensor = tf.browser.fromPixels(imageData, 1)
+                .resizeBilinear([28, 28])
+                .toFloat()
+                .div(255.0)
+                .expandDims(0);
+
+            // Get prediction
+            const prediction = await model.predict(tensor).data();
+            const result = Array.from(prediction)
+                .map((x, i) => ({probability: x, digit: i}))
+                .sort((a, b) => b.probability - a.probability)[0];
+
+            document.getElementById('prediction').textContent =
+                `${result.digit} (${(result.probability * 100).toFixed(2)}% confidence)`;
+        }
+    </script>
+</body>
+</html>
