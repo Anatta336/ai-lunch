@@ -1,7 +1,7 @@
 <script setup></script>
 <template>
     <article>
-        <h1>What's Going On With AI?</h1>
+        <h1>What's Going On<br>With AI?</h1>
     </article>
 </template>
 <style lang="scss" scoped>
@@ -13,7 +13,7 @@ article {
     h1 {
         text-align: center;
         font-weight: bold;
-        font-size: 4em;
+        font-size: 3em;
         max-width: 60%;
     }
 }

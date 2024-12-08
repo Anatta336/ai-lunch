@@ -27,12 +27,12 @@ onUnmounted(() => {
 
 function onKeydown(event) {
     if (event.key === 'ArrowRight') {
-        slideIndex.value = Math.min((slideIndex.value + 1), props.slides.length - 1)
+        slideIndex.value = Math.min(slideIndex.value + 1, props.slides.length - 1)
 
         return;
     }
     if (event.key === 'ArrowLeft') {
-        slideIndex.value = Math.max((slideIndex.value - 1, 0));
+        slideIndex.value = Math.max(slideIndex.value - 1, 0);
 
         return;
     }
@@ -41,12 +41,6 @@ function onKeydown(event) {
 <template>
     <component
         :is="currentSlide"
-        class="slide"
     />
 </template>
-<style lang="scss" scoped>
-.slide {
-    width: 100%;
-    height: 100%;
-}
-</style>
+<style lang="scss" scoped></style>

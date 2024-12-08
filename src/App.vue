@@ -1,41 +1,73 @@
 <script setup>
 import Title from './slides/Title.vue';
-import ExampleOne from './slides/ExampleOne.vue';
 import Background from './components/Background.vue';
 import FixedSize from './components/FixedSize.vue';
 import SlideChanger from './components/SlideChanger.vue';
+import Outline from './slides/Outline.vue';
+import MachineLearning from './slides/MachineLearning.vue';
+import NumberRecognitionDemo from './slides/NumberRecognitionDemo.vue';
+import ArtificialNeuralNetworks from './slides/ArtificialNeuralNetworks.vue';
+import MachineLearningMilestones from './slides/MachineLearningMilestones.vue';
 </script>
 
 <template>
-    <Background>
+    <div class="app">
         <FixedSize
             class="slide-container"
             :width="1600"
             :height="900"
             :margin="40"
         >
+            <Background class="background" />
             <SlideChanger
+                class="slide"
                 :slides="[
                     Title,
-                    ExampleOne,
+                    Outline,
+                    MachineLearning,
+                    NumberRecognitionDemo,
+                    ArtificialNeuralNetworks,
+                    MachineLearningMilestones,
                 ]"
             />
         </FixedSize>
-    </Background>
+    </div>
 </template>
 
 <style lang="scss" scoped>
-.slide-container {
+.app {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     position: relative;
 
-    border-radius: 10px;
-
-    backdrop-filter: blur(15px);
-    background-color: rgba(52, 47, 72, 0.8);
-
-    // Mask off 20px border. So the element can be large enough to pick up nearby
-    // background to blur, without actually being that large.
-    // Not compatible with border-radius.
-    // mask: linear-gradient(black, black) 20px 20px/calc(100% - 40px) calc(100% - 40px) no-repeat;
+    background: rgb(11, 11, 13);
+    color: #fff3ed;
 }
+
+.slide-container {
+    position: relative;
+}
+
+.background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 10px;
+    backdrop-filter: blur(12px);
+    background-color: rgba(45, 39, 69, 0.4);
+    z-index: 1;
+}
+
 </style>
