@@ -16,7 +16,7 @@ import MachineLearningMilestones from './slides/MachineLearningMilestones.vue';
             class="slide-container"
             :width="1600"
             :height="900"
-            :margin="40"
+            :margin="20"
         >
             <Background class="background" />
             <SlideChanger
