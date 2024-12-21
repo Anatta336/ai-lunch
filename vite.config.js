@@ -15,6 +15,7 @@ export default defineConfig({
             '@': fileURLToPath(new URL('./src', import.meta.url))
         },
     },
+    // Everything in this directory will be available as static assets.
     assetsInclude: ['src/assets/models/**'],
     build: {
         rollupOptions: {
