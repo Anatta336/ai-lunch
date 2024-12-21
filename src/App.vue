@@ -22,10 +22,10 @@ import MachineLearningMilestones from './slides/MachineLearningMilestones.vue';
             <SlideChanger
                 class="slide"
                 :slides="[
+                    NumberRecognitionDemo,
                     Title,
                     Outline,
                     MachineLearning,
-                    NumberRecognitionDemo,
                     ArtificialNeuralNetworks,
                     MachineLearningMilestones,
                 ]"

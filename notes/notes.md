@@ -25,6 +25,16 @@
 
 ## Other ML
 
+## Anaconda
+You have chosen to not have conda modify your shell scripts at all.
+To activate conda's base environment in your current shell session:
+```sh
+eval "$(/home/sam/anaconda3/bin/conda shell.YOUR_SHELL_NAME hook)"
+```
+To install conda's shell functions for easier access, first activate, then:
+```sh
+conda init
+```
 
 ## References
 http://jalammar.github.io/visual-interactive-guide-basics-neural-networks/
