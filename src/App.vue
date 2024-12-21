@@ -8,6 +8,7 @@ import MachineLearning from './slides/MachineLearning.vue';
 import NumberRecognitionDemo from './slides/NumberRecognitionDemo.vue';
 import ArtificialNeuralNetworks from './slides/ArtificialNeuralNetworks.vue';
 import MachineLearningMilestones from './slides/MachineLearningMilestones.vue';
+import NumberRecognitionInside from './slides/NumberRecognitionInside.vue';
 </script>
 
 <template>
@@ -23,6 +24,7 @@ import MachineLearningMilestones from './slides/MachineLearningMilestones.vue';
                 class="slide"
                 :slides="[
                     NumberRecognitionDemo,
+                    NumberRecognitionInside,
                     Title,
                     Outline,
                     MachineLearning,
