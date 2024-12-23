@@ -5,9 +5,18 @@ import NumberOutput from '@/components/NumberOutput.vue';
 import InputCanvas from '@/components/InputCanvas.vue';
 import threeImage from '@/assets/images/three.png';
 
-let model = null;
+let convolutionModel = null;
+let denseModel = null;
 let modelReady = null;
-const predictions = ref(
+
+const densePredictions = ref(
+    Array.from({ length: 10 }, (_, i) => ({
+        label: i.toString(),
+        probability: 0.0
+    }))
+);
+
+const convolutionPredictions = ref(
     Array.from({ length: 10 }, (_, i) => ({
         label: i.toString(),
         probability: 0.0
@@ -19,13 +28,17 @@ onMounted(() => {
 });
 
 function clearPredictions() {
-    for (let i = 0; i < predictions.value.length; i++) {
-        predictions.value[i].probability = 0.0;
+    for (let i = 0; i < convolutionPredictions.value.length; i++) {
+        convolutionPredictions.value[i].probability = 0.0;
+    }
+    for (let i = 0; i < densePredictions.value.length; i++) {
+        densePredictions.value[i].probability = 0.0;
     }
 }
 
 async function fetchModel() {
-    model = await tf.loadLayersModel('/models/numbers-convolution/model.json');
+    convolutionModel = await tf.loadLayersModel('/models/numbers-convolution/model.json');
+    denseModel = await tf.loadLayersModel('/models/numbers/model.json');
 }
 
 async function getPrediction({ imageData, pixels }) {
@@ -36,17 +49,25 @@ async function getPrediction({ imageData, pixels }) {
         pixels[i/4] = (255 - imageData.data[i]) / 255;
     }
 
-    const inputTensor = tf.tensor(pixels, [1, 28, 28, 1]);
-    const prediction = await model.predict(inputTensor).data();
-
-    predictions.value = Array.from(prediction).map((probability, index) => {
+    const convolutionInput = tf.tensor(pixels, [1, 28, 28, 1]);
+    const convolutionRaw = await convolutionModel.predict(convolutionInput).data();
+    convolutionPredictions.value = Array.from(convolutionRaw).map((probability, index) => {
         return {
             label: index.toString(),
             probability
         };
     });
+    convolutionInput.dispose();
 
-    inputTensor.dispose();
+    const inputTensor = tf.tensor(pixels, [1, 28, 28]);
+    const denseRaw = await denseModel.predict(inputTensor).data();
+    densePredictions.value = Array.from(denseRaw).map((probability, index) => {
+        return {
+            label: index.toString(),
+            probability
+        };
+    });
+    denseInput.dispose();
 }
 
 </script>
@@ -58,10 +79,18 @@ async function getPrediction({ imageData, pixels }) {
             @input="getPrediction"
             :initial-image="threeImage"
         />
+        <div>Result from the base model:</div>
         <NumberOutput
-            :results="predictions"
+            :results="densePredictions"
             style="
-                padding: 0 50px;
+                padding: 0px 50px 50px;
+            "
+        />
+        <div>Result from convolution model:</div>
+        <NumberOutput
+            :results="convolutionPredictions"
+            style="
+                padding: 0px 50px 50px;
             "
         />
     </article>

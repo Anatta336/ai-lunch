@@ -1,6 +1,6 @@
 <script setup>
 import * as tf from '@tensorflow/tfjs';
-import { onMounted, ref, } from 'vue';
+import { onMounted, ref, computed } from 'vue';
 import LayerAsDots from '@/components/LayerAsDots.vue';
 import InputCanvas from '@/components/InputCanvas.vue';
 import threeImage from '@/assets/images/three.png';
@@ -13,6 +13,16 @@ const rowLengths = ref([
 let model = null;
 let modelReady = null;
 const trimmedModels = [];
+
+const finalCertainty = computed(() => {
+    const lastLayer = layerOutputs.value[layerOutputs.value.length - 1] ?? [0];
+    return Math.max(...lastLayer);
+});
+
+const finalResult = computed(() => {
+    const lastLayer = layerOutputs.value[layerOutputs.value.length - 1] ?? [0];
+    return lastLayer.indexOf(Math.max(...lastLayer));
+});
 
 onMounted(() => {
     modelReady = fetchModel();
@@ -30,13 +40,11 @@ async function fetchModel() {
             outputs: model.layers[i].output
         }));
 
-        if (i === model.layers.length - 1) {
-            // Last layer is output, which we show as one item per row.
-            rowLengths.value.push(1);
-            continue;
+        if (i == 1) {
+            rowLengths.value.push(Math.ceil(Math.sqrt(model.layers[i].output.shape[1])));
+        } else {
+            rowLengths.value.push(Math.max(1, Math.ceil(model.layers[i].output.shape[1] / 20)));
         }
-
-        rowLengths.value.push(Math.ceil(Math.sqrt(model.layers[i].output.shape[1])));
     }
 
     initOutputsFromModel();
@@ -86,8 +94,11 @@ async function getPrediction({ imageData, pixels }) {
                 :key="index"
                 :results="output"
                 :items-per-row="rowLengths[index]"
-                square
             />
+            <div class="result">
+                {{ finalResult }}
+                <small>{{ (finalCertainty * 100).toFixed(0) }}%</small>
+            </div>
         </div>
         <p>
             This network can be described as a Multilayer Perceptron (MLP) with 3 hidden layers.
@@ -108,5 +119,13 @@ article {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+}
+.result {
+    width: 70px;
+
+    small {
+        font-size: 1.2rem;
+        color: #a4fbeb;
+    }
 }
 </style>

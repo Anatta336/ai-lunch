@@ -69,7 +69,6 @@ const filterResults = computed(() => {
         :results="filter.results"
         :items-per-row="filter.itemsPerRow"
         :dot-size="8"
-        square
     />
 </div>
 </template>

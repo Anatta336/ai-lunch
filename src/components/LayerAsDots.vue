@@ -80,7 +80,7 @@ const borderRadius = computed(() => {
                 :key="`${rowIndex}|${itemIndex}`"
                 class="dot"
                 :style="{
-                    opacity: 0.25 + (item * 0.75),
+                    opacity: 0.10 + (item * 0.90),
                     width: `${props.dotSize}px`,
                     height: `${props.dotSize}px`,
                     borderRadius: `${borderRadius}`,

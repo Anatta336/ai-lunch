@@ -11,6 +11,8 @@ import MachineLearningMilestones from './slides/MachineLearningMilestones.vue';
 import NumberFeedForwardInside from './slides/NumberFeedForwardInside.vue';
 import NumberConvolution from './slides/NumberConvolution.vue';
 import NumberConvolutionInside from './slides/NumberConvolutionInside.vue';
+import Weights from './slides/Weights.vue';
+import Training from './slides/Training.vue';
 </script>
 
 <template>
@@ -19,7 +21,7 @@ import NumberConvolutionInside from './slides/NumberConvolutionInside.vue';
             class="slide-container"
             :width="1600"
             :height="900"
-            :margin="20"
+            :margin="10"
         >
             <Background class="background" />
             <SlideChanger
@@ -28,12 +30,12 @@ import NumberConvolutionInside from './slides/NumberConvolutionInside.vue';
                     Title,
                     MachineLearning,
                     NumberFeedForward,
-                    NumberFeedForwardInside,
                     ArtificialNeuralNetworks,
+                    NumberFeedForwardInside,
+                    Weights,
+                    Training,
                     NumberConvolution,
                     NumberConvolutionInside,
-
-                    Outline,
                 ]"
             />
         </FixedSize>

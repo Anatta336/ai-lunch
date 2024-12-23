@@ -8,6 +8,8 @@ import threeImage from '@/assets/images/three.png';
 let model = null;
 let modelReady = null;
 const layers = ref([]);
+const finalResult = ref(0);
+const finalCertainty = ref(0);
 
 onMounted(() => {
     modelReady = fetchModel();
@@ -64,6 +66,13 @@ async function getPrediction({ imageData, pixels }) {
 
         const data = await model.predict(inputTensor).data();
         layer.resultsData = Array.from(data);
+
+        if (i == layers.value.length - 1) {
+            const highest = Math.max(...data);
+            const index = data.indexOf(highest);
+            finalResult.value = index;
+            finalCertainty.value = highest;
+        }
     }
 
     inputTensor.dispose();
@@ -91,11 +100,15 @@ async function getPrediction({ imageData, pixels }) {
                 :key="index"
                 :layer="layer"
             />
-            <p>
-                This network uses convolution layers followed by dense layers.
-                It's known as a Convolutional Neural Network (CNN).
-            </p>
+            <div class="result">
+                {{ finalResult }}
+                <small>{{ (finalCertainty * 100).toFixed(0) }}%</small>
+            </div>
         </div>
+        <p>
+            This network uses convolution layers followed by dense layers.
+            It's known as a Convolutional Neural Network (CNN).
+        </p>
     </article>
 </template>
 <style lang="scss" scoped>
@@ -113,5 +126,13 @@ article {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+}
+.result {
+    width: 70px;
+
+    small {
+        font-size: 1.2rem;
+        color: #a4fbeb;
+    }
 }
 </style>
