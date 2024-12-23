@@ -3,11 +3,10 @@ import * as tf from '@tensorflow/tfjs';
 import { onMounted, ref } from 'vue';
 import NumberOutput from '@/components/NumberOutput.vue';
 import InputCanvas from '@/components/InputCanvas.vue';
+import threeImage from '@/assets/images/three.png';
 
-// Get Vite to tell us the URL for accessing this file.
-const modelUrl = new URL('@/assets/models/numbers/model.json', import.meta.url).href;
 let model = null;
-
+let modelReady = null;
 const predictions = ref(
     Array.from({ length: 10 }, (_, i) => ({
         label: i.toString(),
@@ -16,7 +15,7 @@ const predictions = ref(
 );
 
 onMounted(() => {
-    fetchModel();
+    modelReady = fetchModel();
 });
 
 function clearPredictions() {
@@ -26,16 +25,18 @@ function clearPredictions() {
 }
 
 async function fetchModel() {
-    model = await tf.loadLayersModel(modelUrl);
+    model = await tf.loadLayersModel('/models/numbers-convolution/model.json');
 }
 
 async function getPrediction({ imageData, pixels }) {
+    await modelReady;
+
     // Convert to grayscale and normalize
     for (let i = 0; i < imageData.data.length; i += 4) {
         pixels[i/4] = (255 - imageData.data[i]) / 255;
     }
 
-    const inputTensor = tf.tensor(pixels, [1, 28, 28]);
+    const inputTensor = tf.tensor(pixels, [1, 28, 28, 1]);
     const prediction = await model.predict(inputTensor).data();
 
     predictions.value = Array.from(prediction).map((probability, index) => {
@@ -51,10 +52,11 @@ async function getPrediction({ imageData, pixels }) {
 </script>
 <template>
     <article>
-        <h1>Recognising Handwritten Numbers</h1>
+        <h1>Recognising Numbers - Convolution</h1>
         <InputCanvas
             @clear="clearPredictions"
             @input="getPrediction"
+            :initial-image="threeImage"
         />
         <NumberOutput
             :results="predictions"
@@ -70,17 +72,5 @@ article {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-.canvas-wrap {
-    position: relative;
-
-    img {
-        position: absolute;
-        top: 0px;
-        right: -24px;
-    }
-}
-.clickable {
-    cursor: pointer;
 }
 </style>

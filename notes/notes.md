@@ -188,4 +188,5 @@ Scaling surprise over past 10 years. Had thought we'd need more in the way of cl
 Most people don't like chat bots.
 
 --
+Architecture being well suited to the problem gets you better results with less model size and training time.
 

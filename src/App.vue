@@ -5,10 +5,12 @@ import FixedSize from './components/FixedSize.vue';
 import SlideChanger from './components/SlideChanger.vue';
 import Outline from './slides/Outline.vue';
 import MachineLearning from './slides/MachineLearning.vue';
-import NumberRecognitionDemo from './slides/NumberRecognitionDemo.vue';
+import NumberFeedForward from './slides/NumberFeedForward.vue';
 import ArtificialNeuralNetworks from './slides/ArtificialNeuralNetworks.vue';
 import MachineLearningMilestones from './slides/MachineLearningMilestones.vue';
-import NumberRecognitionInside from './slides/NumberRecognitionInside.vue';
+import NumberFeedForwardInside from './slides/NumberFeedForwardInside.vue';
+import NumberConvolution from './slides/NumberConvolution.vue';
+import NumberConvolutionInside from './slides/NumberConvolutionInside.vue';
 </script>
 
 <template>
@@ -23,13 +25,15 @@ import NumberRecognitionInside from './slides/NumberRecognitionInside.vue';
             <SlideChanger
                 class="slide"
                 :slides="[
-                    NumberRecognitionDemo,
-                    NumberRecognitionInside,
                     Title,
-                    Outline,
                     MachineLearning,
+                    NumberFeedForward,
+                    NumberFeedForwardInside,
                     ArtificialNeuralNetworks,
-                    MachineLearningMilestones,
+                    NumberConvolution,
+                    NumberConvolutionInside,
+
+                    Outline,
                 ]"
             />
         </FixedSize>

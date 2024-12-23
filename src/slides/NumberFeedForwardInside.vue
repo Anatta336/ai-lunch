@@ -3,9 +3,7 @@ import * as tf from '@tensorflow/tfjs';
 import { onMounted, ref, } from 'vue';
 import LayerAsDots from '@/components/LayerAsDots.vue';
 import InputCanvas from '@/components/InputCanvas.vue';
-
-// Get Vite to tell us the URL for accessing this file.
-const modelUrl = new URL('@/assets/models/numbers/model.json', import.meta.url).href;
+import threeImage from '@/assets/images/three.png';
 
 const layerOutputs = ref([]);
 const rowLengths = ref([
@@ -13,14 +11,15 @@ const rowLengths = ref([
 ]);
 
 let model = null;
+let modelReady = null;
 const trimmedModels = [];
 
 onMounted(() => {
-    fetchModel();
+    modelReady = fetchModel();
 });
 
 async function fetchModel() {
-    model = await tf.loadLayersModel(modelUrl);
+    model = await tf.loadLayersModel('/models/numbers/model.json');
 
     layerOutputs.value = [];
     rowLengths.value = [];
@@ -54,6 +53,8 @@ function initOutputsFromModel() {
 }
 
 async function getPrediction({ imageData, pixels }) {
+    await modelReady;
+
     // Convert to grayscale and normalize
     for (let i = 0; i < imageData.data.length; i += 4) {
         pixels[i/4] = (255 - imageData.data[i]) / 255;
@@ -72,11 +73,12 @@ async function getPrediction({ imageData, pixels }) {
 </script>
 <template>
     <article>
-        <h1>Inside the Model</h1>
+        <h1>Inside the Basic Model</h1>
         <InputCanvas
             @clear="initOutputsFromModel"
             @input="getPrediction"
             :px-per-pixel="7"
+            :initial-image="threeImage"
         />
         <div class="layers">
             <LayerAsDots
@@ -84,8 +86,12 @@ async function getPrediction({ imageData, pixels }) {
                 :key="index"
                 :results="output"
                 :items-per-row="rowLengths[index]"
+                square
             />
         </div>
+        <p>
+            This network can be described as a Multilayer Perceptron (MLP) with 3 hidden layers.
+        </p>
     </article>
 </template>
 <style lang="scss" scoped>
@@ -94,18 +100,6 @@ article {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-.canvas-wrap {
-    position: relative;
-
-    img {
-        position: absolute;
-        top: 0px;
-        right: -24px;
-    }
-}
-.clickable {
-    cursor: pointer;
 }
 .layers {
     display: flex;

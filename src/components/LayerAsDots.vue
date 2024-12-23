@@ -15,6 +15,14 @@ const props = defineProps({
         type: Number,
         default: 100,
     },
+    dotSize: {
+        type: Number,
+        default: 15,
+    },
+    square: {
+        type: Boolean,
+        default: false,
+    },
 });
 
 const normalizedResults = computed(() => {
@@ -44,19 +52,39 @@ const itemsByRow = computed(() => {
     return result;
 });
 
+const gapSize = computed(() => {
+    return Math.max(1, Math.floor(props.dotSize / 5));
+});
+const borderRadius = computed(() => {
+    return props.square ? 0 : '50%';
+});
+
 </script>
 <template>
-    <div class="wrap">
+    <div
+        class="wrap"
+        :style="{
+            gap: `${gapSize}px`,
+        }"
+    >
         <div
             v-for="(row, rowIndex) in itemsByRow"
-            class="row"
             :key="rowIndex"
+            class="row"
+            :style="{
+                gap: `${gapSize}px`,
+            }"
         >
             <div
                 v-for="(item, itemIndex) in row"
                 :key="`${rowIndex}|${itemIndex}`"
                 class="dot"
-                :style="{ opacity: 0.25 + (item * 0.75) }"
+                :style="{
+                    opacity: 0.25 + (item * 0.75),
+                    width: `${props.dotSize}px`,
+                    height: `${props.dotSize}px`,
+                    borderRadius: `${borderRadius}`,
+                }"
             >
             </div>
         </div>
@@ -66,19 +94,14 @@ const itemsByRow = computed(() => {
 .wrap {
     display: flex;
     flex-direction: column;
-    gap: 5px;
     flex-wrap: nowrap;
 }
 .row {
     display: flex;
     flex-direction: row;
-    gap: 5px;
     flex-wrap: nowrap;
 }
 .dot {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
     background-color: #79ffeb;
 }
 </style>

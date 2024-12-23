@@ -1,11 +1,15 @@
 <script setup>
 import RefreshIcon from '@/assets/svg/refresh.svg';
-import { defineEmits, defineProps, onMounted, ref, useTemplateRef } from 'vue';
+import { defineEmits, defineProps, onMounted, ref, useTemplateRef, watch } from 'vue';
 
 const props = defineProps({
     pxPerPixel: {
         type: Number,
         default: 10,
+    },
+    initialImage: {
+        type: String,
+        default: '',
     },
 });
 
@@ -20,6 +24,7 @@ const isDrawing = ref(false);
 
 onMounted(() => {
     initCanvas();
+    loadInitialImage();
 });
 
 function initCanvas() {
@@ -32,6 +37,23 @@ function initCanvas() {
     ctx.strokeStyle = 'black';
     ctx.lineWidth = 3;
 }
+
+async function loadInitialImage() {
+    if (!props.initialImage || !ctx) return;
+
+    const img = new Image();
+    img.onload = () => {
+        ctx.drawImage(img, 0, 0, 28, 28);
+        // Trigger initial prediction
+        const imageData = ctx.getImageData(0, 0, 28, 28);
+        const pixels = new Float32Array(28 * 28);
+        emit('input', { imageData, pixels });
+    };
+    img.src = props.initialImage;
+}
+
+// Watch for changes to initialImage prop
+watch(() => props.initialImage, loadInitialImage);
 
 function clearCanvas() {
     ctx.fillStyle = 'white';
