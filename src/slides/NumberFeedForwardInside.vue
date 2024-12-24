@@ -101,7 +101,7 @@ async function getPrediction({ imageData, pixels }) {
             </div>
         </div>
         <p>
-            This network can be described as a Multilayer Perceptron (MLP) with 3 hidden layers.
+            This is a densely connected network with 3 hidden layers. Sometimes referred to as a Multilayer Perceptron (MLP).
         </p>
     </article>
 </template>

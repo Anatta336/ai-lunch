@@ -1,6 +1,6 @@
 <script setup>
 import Title from './slides/Title.vue';
-import Background from './components/Background.vue';
+import BackgroundNodes from './components/BackgroundNodes.vue';
 import FixedSize from './components/FixedSize.vue';
 import SlideChanger from './components/SlideChanger.vue';
 import Outline from './slides/Outline.vue';
@@ -23,19 +23,19 @@ import Training from './slides/Training.vue';
             :height="900"
             :margin="10"
         >
-            <Background class="background" />
+            <!-- <BackgroundNodes class="background" /> -->
             <SlideChanger
                 class="slide"
                 :slides="[
                     Title,
                     MachineLearning,
                     NumberFeedForward,
-                    ArtificialNeuralNetworks,
                     NumberFeedForwardInside,
                     Weights,
                     Training,
                     NumberConvolution,
                     NumberConvolutionInside,
+                    ArtificialNeuralNetworks,
                 ]"
             />
         </FixedSize>
