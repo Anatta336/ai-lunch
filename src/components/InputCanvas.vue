@@ -1,6 +1,6 @@
 <script setup>
 import RefreshIcon from '@/assets/svg/refresh.svg';
-import { defineEmits, defineProps, onMounted, ref, useTemplateRef, watch } from 'vue';
+import { onMounted, ref, useTemplateRef, watch } from 'vue';
 
 const props = defineProps({
     pxPerPixel: {

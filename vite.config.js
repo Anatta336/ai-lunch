@@ -10,12 +10,15 @@ export default defineConfig({
         vue(),
         vueDevTools(),
     ],
+    server: {
+        host: '0.0.0.0',
+    },
     resolve: {
         alias: {
             '@': fileURLToPath(new URL('./src', import.meta.url))
         },
     },
-    assetsInclude: ['src/assets/models/**'],
+    assetsInclude: ['src/assets/models/**', 'src/assets/fonts/**'],
     build: {
         rollupOptions: {
             output: {
@@ -29,4 +32,4 @@ export default defineConfig({
             },
         },
     },
-})
+});

@@ -73,20 +73,20 @@ async function getPrediction({ imageData, pixels }) {
 </script>
 <template>
     <article>
-        <h1>Recognising Numbers - Convolution</h1>
+        <h1>Architecture Comparison</h1>
         <InputCanvas
             @clear="clearPredictions"
             @input="getPrediction"
             :initial-image="threeImage"
         />
-        <div>Result from the base model:</div>
+        <div>Result from dense model (52 KB)</div>
         <NumberOutput
             :results="densePredictions"
             style="
                 padding: 0px 50px 50px;
             "
         />
-        <div>Result from convolution model:</div>
+        <div>Result from convolution model (30 KB)</div>
         <NumberOutput
             :results="convolutionPredictions"
             style="

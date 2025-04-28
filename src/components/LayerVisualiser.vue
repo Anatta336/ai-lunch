@@ -14,6 +14,10 @@ const props = defineProps({
             'isFlat',
             'resultsData',
         ].every((key) => key in value);
+    },
+    nodeSize: {
+        type: Number,
+        default: 8
     }
 });
 
@@ -68,7 +72,7 @@ const filterResults = computed(() => {
         :key="index"
         :results="filter.results"
         :items-per-row="filter.itemsPerRow"
-        :dot-size="8"
+        :dot-size="nodeSize"
     />
 </div>
 </template>

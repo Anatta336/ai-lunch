@@ -8,18 +8,41 @@ import trainingNine from '../assets/images/training-nine.png';
     <article>
         <h1>Training</h1>
         <ul>
-            <li>Before a model can be used it must be trained.</li>
-            <li>Training sets the parameters of the model, such as the weights for the connections between layers.</li>
-            <li>Training relies on having a large set of example input data with correct output values.</li>
-            <li>For each example, the model is run and the "error" is found by comparing the output to the correct value.</li>
-            <li>The parameters of the model are adjusted to to reduce the error.</li>
-            <li>The maths behind that adjustment is called "backpropagation".</li>
+            <li>
+                The weights between nodes are set by "training" the model.
+            </li>
+            <li>
+                Training relies on having a large set of example input data with correct output values.
+            </li>
+            <div class="example-images">
+                <img :src="trainingTwo" alt="Handwritten number two" />
+                <img :src="trainingFour" alt="Handwritten number four" />
+                <img :src="trainingNine" alt="Handwritten number nine" />
+                <div>...and 69,997 more.</div>
+            </div>
+            <li>
+                For each example, the model is run and the "error" is found by comparing the output to the correct value.
+                <ul>
+                    <li>
+                        The weights of the model are adjusted to reduce the error.
+                    </li>
+                    <li>
+                        That's (usually) done using a technique called backpropagation.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                The training data <strong>is not</strong> stored by the model.
+                <ul>
+                    <li>
+                        The model isn't looking through its training data to find a match.
+                    </li>
+                    <li>
+                        This number example is trained on 18,637 KB of images, but the model is only 30 KB.
+                    </li>
+                </ul>
+            </li>
         </ul>
-        <div class="example-images">
-            <img :src="trainingTwo" alt="Handwritten number two" />
-            <img :src="trainingFour" alt="Handwritten number four" />
-            <img :src="trainingNine" alt="Handwritten number nine" />
-        </div>
     </article>
 </template>
 <style lang="scss" scoped>
@@ -28,11 +51,16 @@ article {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    padding: 0 100px;
+}
+li {
+    margin: 10px 0;
 }
 .example-images {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 10px;
-    margin-top: 2rem;
 }
 </style>

@@ -102,6 +102,6 @@ const borderRadius = computed(() => {
     flex-wrap: nowrap;
 }
 .dot {
-    background-color: #79ffeb;
+    background-color: #cfffcc;
 }
 </style>

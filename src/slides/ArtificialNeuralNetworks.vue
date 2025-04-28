@@ -14,11 +14,15 @@
             </li>
             <li>
                 Each operation is simple, but the combined effect can be complex.
+                <ul>
+                    <li>There's no mystery to how an output is reached mechanically.</li>
+                    <li>It can be very hard to explain <strong>why</strong> the model came to a certain decision.</li>
+                </ul>
             </li>
             <li>
                 Training is setting these weights to get the expected results.
                 <ul>
-                    <li>Typically using <strong>backpropagation</strong>.</li>
+                    <li>Typically using backpropagation.</li>
                     <li>Training needs lots of example data.</li>
                 </ul>
             </li>
@@ -34,5 +38,8 @@ article {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+li {
+    margin: 15px 0;
 }
 </style>
