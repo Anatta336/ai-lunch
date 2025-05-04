@@ -12,17 +12,17 @@ const remainingOutput = 'The capital of Nigeria is Abuja.'.split(' ');
 const possibleOutput = [
     [
         { label: 'The',        probability: 0.94 },
-        { label: 'Nigeria\'s', probability: 0.06 },
-        { label: 'Abuja.',      probability: 0.02 },
+        { label: 'Nigeria\'s', probability: 0.48 },
+        { label: 'Abuja.',      probability: 0.12 },
     ],
     [
         { label: 'capital', probability: 0.98 },
-        { label: 'current', probability: 0.04 },
+        { label: 'current', probability: 0.24 },
         { label: 'city', probability: 0.02 },
     ],
     [
         { label: 'of',       probability: 0.89 },
-        { label: 'city',     probability: 0.12 },
+        { label: 'city',     probability: 0.42 },
         { label: 'province', probability: 0.01 },
     ],
     [
@@ -37,7 +37,7 @@ const possibleOutput = [
     ],
     [
         { label: 'Abuja.', probability: 0.99 },
-        { label: 'Lagos.', probability: 0.02 },
+        { label: 'Lagos.', probability: 0.32 },
         { label: 'the',    probability: 0.01 },
     ],
 ];
@@ -61,20 +61,19 @@ function advance() {
 </script>
 <template>
     <article>
-        <h1>The LLM Chatbot - Behind the Scenes</h1>
+        <h1>Context and Predicting Tokens</h1>
         <p>
-            Input to the model:
+            Input to the model is the context:
         </p>
         <pre>{{ input }}</pre>
 
+        <div class="border">
+            <NumberOutput
+                :results="possibleTokens"
+                height="200"
+            />
+        </div>
 
-        <NumberOutput
-            :results="possibleTokens"
-            height="200"
-        />
-
-        <!-- <pre v-if="hasNextToken">{{ nextToken }}</pre>
-        <pre v-else>[END]</pre> -->
         <button
             :disabled="!hasNextToken"
             @click="advance"
@@ -82,12 +81,10 @@ function advance() {
             Predict
         </button>
         <p>
-            The chatbot produces a response by predicting what what word is likely to
-            come next given the text up to that point.
+            The chatbot produces a response by predicting what token is likely to come next given the text up to that point.
         </p>
         <p>
-            It proceeds one word (actually one token) at a time, adding the word it predicted
-            back into its input for the next prediction.
+            It proceeds one token at a time, adding what it just produced back into its input for the next prediction.
         </p>
     </article>
 </template>
@@ -99,6 +96,13 @@ article {
     align-items: center;
 
     padding: 0 100px;
+}
+.border {
+    width: 100%;
+    border: 2px solid #fff3ed;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
 }
 p {
     width: 100%;

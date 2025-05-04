@@ -3,7 +3,7 @@
 </script>
 <template>
     <article>
-        <h1>The LLM Chatbot</h1>
+        <h1>Conversation with an LLM</h1>
         <p class="input">
             What is the capital of Nigeria?
         </p>
@@ -19,9 +19,6 @@
             This decision was made by the Nigerian government to provide a neutral
             location for the country's seat of government, away from the regional
             influence of Lagos.
-        </p>
-        <p>
-            An interaction with Llama 3.2, 3 billion parameter version.
         </p>
         <p>
             The chatbot demonstrates general knowledge, and understands the context

@@ -14,8 +14,7 @@
                     Everything you deal with is handled as "tokens".
                     <ul>
                         <li>Some words are multiple tokens.</li>
-                        <li>Punctuation marks are also tokens.</li>
-                        <li>There are some special tokens to mark things like the start and end of text blocks.</li>
+                        <li>Punctuation marks and some special marks are also tokens.</li>
                         <li>10,000 words would be around 15,000 tokens.</li>
                     </ul>
                 </li>
@@ -48,6 +47,10 @@ article {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    .content > ul > li {
+        margin-bottom: 1.3rem;
+    }
 }
 h1 {
     text-align: center;

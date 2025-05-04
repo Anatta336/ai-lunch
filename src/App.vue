@@ -1,35 +1,33 @@
 <script setup>
-import Title from './slides/Title.vue';
-import BackgroundNodes from './components/BackgroundNodes.vue';
-import ChatbotBehindScenes from './slides/ChatbotBehindScenes.vue';
-import ChatbotExample from './slides/ChatbotExample.vue';
 import FixedSize from './components/FixedSize.vue';
 import SlideChanger from './components/SlideChanger.vue';
+
+import Title from './slides/Title.vue';
+import Definitions from './slides/Definitions.vue';
 import Takeaways from './slides/Takeaways.vue';
-import UsageExamples from './slides/UsageExamples.vue';
 import MachineLearningIntro from './slides/MachineLearningIntro.vue';
 import ModelLifecycle from './slides/ModelLifecycle.vue';
-import NumberFeedForward from './slides/NumberFeedForward.vue';
 import ArtificialNeuralNetworks from './slides/ArtificialNeuralNetworks.vue';
-import MachineLearningMilestones from './slides/MachineLearningMilestones.vue';
-import NumberFeedForwardInside from './slides/NumberFeedForwardInside.vue';
-import ArchitectureComparison from './slides/ArchitectureComparison.vue';
 import NumberConvolutionInside from './slides/NumberConvolutionInside.vue';
 import Weights from './slides/Weights.vue';
+import ArchitectureComparison from './slides/ArchitectureComparison.vue';
 import Training from './slides/Training.vue';
-import ChatbotEpistemology from './slides/ChatbotEpistemology.vue';
-import ChatbotLimits from './slides/ChatbotLimits.vue';
-import ChatbotExcitement from './slides/ChatbotExcitement.vue';
-import Economics from './slides/Economics.vue';
-import LanguageStrengths from './slides/LanguageStrengths.vue';
-import SimulatedReasoning from './slides/SimulatedReasoning.vue';
-
 import BeingAnLlm from './slides/BeingAnLlm.vue';
 import BeingAnLlmPreTrainingA from './slides/BeingAnLlmPreTrainingA.vue';
 import BeingAnLlmPreTrainingB from './slides/BeingAnLlmPreTrainingB.vue';
 import SupervisedFineTuning from './slides/SupervisedFineTuning.vue';
 import ReinforcementLearningHumanFeedback from './slides/ReinforcementLearningHumanFeedback.vue';
-
+import ChatbotBehindScenes from './slides/ChatbotBehindScenes.vue';
+import ChatbotExample from './slides/ChatbotExample.vue';
+import LlmCharacteristics from './slides/LlmCharacteristics.vue';
+import UsageExamples from './slides/UsageExamples.vue';
+import Economics from './slides/Economics.vue';
+import DangersPre from './slides/DangersPre.vue';
+import DangersA from './slides/DangersA.vue';
+import DangersB from './slides/DangersB.vue';
+import DangersC from './slides/DangersC.vue';
+import DangersD from './slides/DangersD.vue';
+import IdentifyingUse from './slides/IdentifyingUse.vue';
 </script>
 
 <template>
@@ -40,27 +38,38 @@ import ReinforcementLearningHumanFeedback from './slides/ReinforcementLearningHu
             :height="900"
             :margin="10"
         >
-            <!-- <BackgroundNodes class="background" /> -->
             <SlideChanger
                 class="slide"
                 :slides="[
                     Title,
+                    Definitions,
                     Takeaways,
 
                     MachineLearningIntro,
                     NumberConvolutionInside,
-                    ArtificialNeuralNetworks,
+                    Weights,
                     Training,
                     ModelLifecycle,
                     ArchitectureComparison,
+                    ArtificialNeuralNetworks,
 
                     BeingAnLlm,
                     BeingAnLlmPreTrainingA,
                     BeingAnLlmPreTrainingB,
                     SupervisedFineTuning,
                     ReinforcementLearningHumanFeedback,
+                    ChatbotExample,
+                    ChatbotBehindScenes,
 
+                    LlmCharacteristics,
                     UsageExamples,
+                    Economics,
+                    DangersPre,
+                    DangersA,
+                    DangersB,
+                    DangersC,
+                    DangersD,
+                    IdentifyingUse,
 
                     Takeaways,
                 ]"

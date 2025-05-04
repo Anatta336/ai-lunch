@@ -22,18 +22,22 @@
                         Using the latest "reasoning" OpenAI model can cost $15 a minute.
                     </li>
                     <li>
-                        Even for the significantly cheaper models, the cost of handling an extra
-                        user of your AI-powered product is meaningful.
+                        Even for the significantly cheaper models, the cost of handling more
+                        users of your AI-powered product is meaningful.
                     </li>
                 </ul>
             </li>
             <li>
-                Significant per-user cost increases for the developer is very different from
-                the cost profile of traditional software. Markets may not have adjusted to this.
+                Per-user cost is very different from the cost profile of traditional software. Markets may have to adjust.
             </li>
             <li>
-                Companies like OpenAI were promising the most powerful technology that humanity
-                will ever create, so any cost is justified. Reality is catching up.
+                Companies like OpenAI have been promising the most powerful technology
+                that humanity will ever create, so any cost is justified.
+                <ul>
+                    <li>
+                        Reality is catching up.
+                    </li>
+                </ul>
             </li>
         </ul>
     </article>

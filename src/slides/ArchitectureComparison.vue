@@ -83,14 +83,14 @@ async function getPrediction({ imageData, pixels }) {
         <NumberOutput
             :results="densePredictions"
             style="
-                padding: 0px 50px 50px;
+                padding: 0px 50px 10px;
             "
         />
         <div>Result from convolution model (30 KB)</div>
         <NumberOutput
             :results="convolutionPredictions"
             style="
-                padding: 0px 50px 50px;
+                padding: 0px 50px 10px;
             "
         />
     </article>

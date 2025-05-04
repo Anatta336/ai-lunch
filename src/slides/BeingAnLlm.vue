@@ -34,6 +34,10 @@ article {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    .content > ul > li {
+        margin-bottom: 3rem;
+    }
 }
 h1 {
     text-align: center;

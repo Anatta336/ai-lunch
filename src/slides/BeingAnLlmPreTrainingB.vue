@@ -37,5 +37,9 @@ article {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    > ul > li {
+        margin-bottom: 3rem;
+    }
 }
 </style>

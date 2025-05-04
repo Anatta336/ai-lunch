@@ -12,7 +12,7 @@ defineProps({
     },
     height: {
         type: Number,
-        default: 400,
+        default: 600,
     },
 });
 
@@ -24,9 +24,13 @@ defineProps({
 >
     <div v-for="result in results" :key="result.label" class="number">
         <label>{{ result.label }}</label>
-        <div class="bar"
-            :style="{ height: `${result.probability * 100}%` }"
-        ></div>
+        <div class="bar-wrap"
+            style="height: calc(100% - 44px);"
+        >
+            <div class="bar"
+                :style="{ height: `${Math.min(1.0, result.probability) * 100}%` }"
+            ></div>
+        </div>
     </div>
 </div>
 </template>
