@@ -4,6 +4,7 @@ import SlideChanger from './components/SlideChanger.vue';
 
 import Title from './slides/Title.vue';
 import Definitions from './slides/Definitions.vue';
+import FlowPerception from './slides/FlowPerception.vue';
 import Takeaways from './slides/Takeaways.vue';
 import MachineLearningIntro from './slides/MachineLearningIntro.vue';
 import ModelLifecycle from './slides/ModelLifecycle.vue';
@@ -43,6 +44,9 @@ import IdentifyingUse from './slides/IdentifyingUse.vue';
                 :slides="[
                     Title,
                     Definitions,
+
+                    FlowPerception,
+
                     Takeaways,
 
                     MachineLearningIntro,
