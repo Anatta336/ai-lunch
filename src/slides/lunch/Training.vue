@@ -1,7 +1,7 @@
 <script setup>
-import trainingTwo from '../assets/images/training-two.png';
-import trainingFour from '../assets/images/training-four.png';
-import trainingNine from '../assets/images/training-nine.png';
+import trainingTwo from '../../assets/images/training-two.png';
+import trainingFour from '../../assets/images/training-four.png';
+import trainingNine from '../../assets/images/training-nine.png';
 
 </script>
 <template>

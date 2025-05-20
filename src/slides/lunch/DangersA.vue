@@ -9,11 +9,15 @@
                     <li>
                         Intelligence agencies recording all communication became possible in the late 20th century.
                         <ul>
-                            <li>Tempora, Bullrun, Echelon</li>
+                            <li>Tempora, Bullrun/Edgehill, Echelon</li>
                             <li>"[...] unlawful and incompatible with the conditions necessary for a democratic society." - 2018 European Court of Human Rights on the UK's systems</li>
                         </ul>
                     </li>
-                    <li>Analysing it all is now possible.</li>
+                    <li>Analysing it all is now possible.
+                        <ul>
+                            <li>It will also make mistakes in that analysis.</li>
+                        </ul>
+                    </li>
                 </ul>
             </li>
             <li>

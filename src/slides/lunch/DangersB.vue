@@ -4,7 +4,10 @@
         <h1>Dangers - Relationships</h1>
         <ul>
             <li>
-                At least one teenager has [allegedly] been killed by an LLM. They built a romantic relationship with it, and it encouraged their suicide.
+                LLMs are good enough at pretending to be human that users start treating them like a person.
+            </li>
+            <li>
+                At least one teenager has [allegedly] been killed by an LLM. After speaking with the AI for several months it encouraged their suicide.
                 <ul>
                     <li>https://www.nbcnews.com/tech/characterai-lawsuit-florida-teen-death-rcna176791</li>
                 </ul>
@@ -20,9 +23,6 @@
                 <ul>
                     <li>As budgets tighten, charging money to keep talking to "your friend" may become a common business model.</li>
                 </ul>
-            </li>
-            <li>
-                LLMs are good enough at pretending to be human that users start treating them like a person.
             </li>
         </ul>
     </article>
