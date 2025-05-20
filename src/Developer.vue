@@ -10,6 +10,7 @@ import Title from './slides/developer/Title.vue';
 import WhatLlmsDo from './slides/developer/WhatLlmsDo.vue';
 import ModelLifecycle from './slides/developer/ModelLifecycle.vue';
 import NumberConvolutionInside from './slides/developer/NumberConvolutionInside.vue';
+import Caution from './slides/developer/Caution.vue';
 </script>
 
 <template>
@@ -30,6 +31,7 @@ import NumberConvolutionInside from './slides/developer/NumberConvolutionInside.
                 ContextBuilding,
                 FailureModes,
                 Iterative,
+                Caution,
                 NumberConvolutionInside
             ]"
         />
