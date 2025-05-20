@@ -13,5 +13,11 @@ article {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    padding: 0 100px;
+
+    > ul > li {
+        margin-bottom: 2rem;
+    }
 }
 </style>

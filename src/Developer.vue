@@ -1,8 +1,15 @@
 <script setup>
 import FixedSize from './components/FixedSize.vue';
 import SlideChanger from './components/SlideChanger.vue';
-
+import BadPrompt from './slides/developer/BadPrompt.vue';
+import BetterPrompt from './slides/developer/BetterPrompt.vue';
+import ContextBuilding from './slides/developer/ContextBuilding.vue';
+import FailureModes from './slides/developer/FailureModes.vue';
+import Iterative from './slides/developer/Iterative.vue';
 import Title from './slides/developer/Title.vue';
+import WhatLlmsDo from './slides/developer/WhatLlmsDo.vue';
+import ModelLifecycle from './slides/developer/ModelLifecycle.vue';
+import NumberConvolutionInside from './slides/developer/NumberConvolutionInside.vue';
 </script>
 
 <template>
@@ -16,6 +23,14 @@ import Title from './slides/developer/Title.vue';
             class="slide"
             :slides="[
                 Title,
+                WhatLlmsDo,
+                ModelLifecycle,
+                BadPrompt,
+                BetterPrompt,
+                ContextBuilding,
+                FailureModes,
+                Iterative,
+                NumberConvolutionInside
             ]"
         />
     </FixedSize>
