@@ -154,6 +154,7 @@ onMounted(() => {
 </template>
 <style lang="scss" scoped>
 article {
+    height: 100%;
     text-wrap: pretty;
     display: flex;
     flex-direction: column;

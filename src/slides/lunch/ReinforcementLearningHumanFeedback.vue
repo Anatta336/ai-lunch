@@ -33,6 +33,7 @@
 </template>
 <style lang="scss" scoped>
 article {
+    height: 100%;
     text-wrap: pretty;
     padding: 30px;
     display: flex;
