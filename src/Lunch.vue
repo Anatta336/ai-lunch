@@ -8,21 +8,17 @@ import FlowPerception from './slides/lunch/FlowPerception.vue';
 import Takeaways from './slides/lunch/Takeaways.vue';
 import MachineLearningIntro from './slides/lunch/MachineLearningIntro.vue';
 import ModelLifecycle from './slides/lunch/ModelLifecycle.vue';
-import ArtificialNeuralNetworks from './slides/lunch/ArtificialNeuralNetworks.vue';
 import NumberConvolutionInside from './slides/lunch/NumberConvolutionInside.vue';
 import Weights from './slides/lunch/Weights.vue';
-import ArchitectureComparison from './slides/lunch/ArchitectureComparison.vue';
 import Training from './slides/lunch/Training.vue';
 import BeingAnLlm from './slides/lunch/BeingAnLlm.vue';
 import BeingAnLlmPreTrainingA from './slides/lunch/BeingAnLlmPreTrainingA.vue';
-import BeingAnLlmPreTrainingB from './slides/lunch/BeingAnLlmPreTrainingB.vue';
 import SupervisedFineTuning from './slides/lunch/SupervisedFineTuning.vue';
 import ReinforcementLearningHumanFeedback from './slides/lunch/ReinforcementLearningHumanFeedback.vue';
 import ChatbotBehindScenes from './slides/lunch/ChatbotBehindScenes.vue';
 import ChatbotExample from './slides/lunch/ChatbotExample.vue';
 import LlmCharacteristics from './slides/lunch/LlmCharacteristics.vue';
 import Economics from './slides/lunch/Economics.vue';
-import DangersPre from './slides/lunch/DangersPre.vue';
 import DangersA from './slides/lunch/DangersA.vue';
 import DangersB from './slides/lunch/DangersB.vue';
 import DangersC from './slides/lunch/DangersC.vue';
@@ -49,26 +45,20 @@ import UsageExamplesBusiness from './slides/lunch/UsageExamplesBusiness.vue';
             :slides="[
                 Title,
                 Definitions,
-                // Takeaways,
-
-                // FlowPerception,
-                // NotebookLM audio?
 
                 MachineLearningIntro,
                 NumberConvolutionInside,
                 Weights,
                 Training,
                 ModelLifecycle,
-                // ArchitectureComparison,
-                // ArtificialNeuralNetworks,
 
                 LlmLifecycle,
                 BeingAnLlm,
                 Tokens,
                 BeingAnLlmPreTrainingA,
-                // BeingAnLlmPreTrainingB,
                 SupervisedFineTuning,
                 ReinforcementLearningHumanFeedback,
+                LlmLifecycle,
                 ChatbotExample,
                 ChatbotBehindScenes,
 
@@ -79,6 +69,7 @@ import UsageExamplesBusiness from './slides/lunch/UsageExamplesBusiness.vue';
 
                 UsageExamplesBusiness,
                 UsageExamplesIndividual,
+                FlowPerception,
 
                 Economics,
                 DangersA,

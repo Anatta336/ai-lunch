@@ -125,12 +125,10 @@ onBeforeUnmount(() => {
         <div class="wrap">
             <div>
                 <ul>
-                    <li>Show a black square with 80 white dots.</li>
-                    <li>The dots should "wrap around" the square, so if they exit off the top they appear on the bottom.</li>
-                    <li>Have a "coherence" slider that selects a value between 0% and 100%.</li>
-                    <li>Each dot should pick its own constant random direction to move in.</li>
-                    <li>All dots should move at the same speed, controlled by a second slider.</li>
-                    <li>A percentage of the dots given by the coherence slider should all be moving in the same direction as one-another.</li>
+                    <li>Describe what you need, and an LLM may be able to write simple code to achieve it.</li>
+                    <li>This needs to be reviewed by a professional if it's used in a situation where breaking things matters.</li>
+                    <li>Without some background in programming it can easily lead to frustration and low quality results.</li>
+                    <li>This is a promising area that is likely to get better.</li>
                 </ul>
             </div>
 
@@ -175,7 +173,7 @@ article {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 80px;
+    padding: 0 120px;
 
     > ul > li {
         margin-bottom: 2rem;

@@ -70,7 +70,7 @@ function advance() {
         <div class="border">
             <NumberOutput
                 :results="possibleTokens"
-                height="200"
+                :height="200"
             />
         </div>
 

@@ -13,12 +13,12 @@
             </ul>
             <img src="@/assets/images/empty-mind.png" alt="Empty-mind" />
             <ul>
-                <li>We'll imagine we are an LLM going through training and inference.</li>
-                <li>You start out knowing nothing.</li>
-                <li>You have no body and no senses, you don't experience the passage of time.</li>
-                <li>Your memory is more like a human's than a database.
+                <li>We'll imagine an LLM going through training and inference.</li>
+                <li>It starts out knowing nothing.</li>
+                <li>It doesn't think about things, just waits for input.</li>
+                <li>Its memory is more like a human's than a database.
                     <ul>
-                        <li>You can't remember every detail.</li>
+                        <li>Can't remember every detail.</li>
                         <li>Memories get fuzzy and mixed up sometimes.</li>
                     </ul>
                 </li>

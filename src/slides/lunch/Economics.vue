@@ -35,7 +35,7 @@
                 that humanity will ever create, so any cost is justified.
                 <ul>
                     <li>
-                        Reality is catching up.
+                        They would love for you to believe them.
                     </li>
                 </ul>
             </li>
@@ -50,7 +50,7 @@ article {
     justify-content: center;
     align-items: center;
 
-    padding: 0 100px;
+    padding: 0 160px;
 }
 li {
     margin: 15px 0;

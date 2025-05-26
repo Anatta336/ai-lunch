@@ -16,7 +16,6 @@
             </div>
             <div class="set">
                 <h2>Inference</h2>
-
                 <ul>
                     <li>Actually using the model.</li>
                     <li>Giving an input and receiving an output.</li>
@@ -25,6 +24,9 @@
                 </ul>
             </div>
         </figure>
+        <p>
+            Our example was images as input and a number as output, but models can be built for all sorts of data.
+        </p>
     </article>
 </template>
 <style lang="scss" scoped>

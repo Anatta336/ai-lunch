@@ -1,10 +1,10 @@
 <script setup></script>
 <template>
     <article>
-        <h1>Use cases as an Undividual</h1>
+        <h1>Use Cases as an Individual</h1>
         <ul>
             <li>
-                Reviewing communication.
+                Reviewing communication
                 <ul>
                     <li>Can directly ask for feedback "does this sound professional?"</li>
                     <li>Or indirectly check you're conveying the right information "list the key action points in this email"</li>
@@ -20,7 +20,8 @@
             <li>
                 Getting started
                 <ul>
-                    <li></li>
+                    <li>Dangerous to rely on for full research.</li>
+                    <li>Can give valuable summaries and starting points for learning about something wholly new.</li>
                 </ul>
             </li>
         </ul>

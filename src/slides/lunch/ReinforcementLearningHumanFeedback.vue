@@ -4,16 +4,16 @@
         <div class="content">
             <h1>Reinforcement Learning from Human Feedback - RLHF</h1>
             <p>
-                You start practicing your new skills, and are graded by what humans think.
+                The model practices its new skills, and is graded based on what humans think.
             </p>
             <img src="@/assets/images/rlhf.png" alt="rlhf" />
             <ul>
                 <li>
-                    You're presented with an instruction and asked to give a response.
+                    Presented with an instruction and asked to give a response, just like it will be when used in real life.
                     <ul>
-                        <li>If that response is something humans like, you are rewarded.</li>
-                        <li>Your responses aren't usually checked by an actual human.</li>
-                        <li>Another AI has been trained on a thousands of human ratings to rate your millions of responses.</li>
+                        <li>Responses that humans like are rewarded.</li>
+                        <li>Usually not checked by an actual human.</li>
+                        <li>Another LLM has been trained on human ratings to rate the new model's responses much faster than a human could.</li>
                         <li>This is called reinforcement learning from human feedback or RLHF.</li>
                     </ul>
                 </li>
@@ -39,6 +39,8 @@ article {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    padding: 0 80px;
 
     .content > ul > li {
         margin-bottom: 3rem;

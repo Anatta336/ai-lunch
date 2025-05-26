@@ -19,8 +19,10 @@ const emit = defineEmits([
 ]);
 
 let ctx = null;
+const predictDelayMs = ref(100);
 const inputCanvas = useTemplateRef('inputCanvas');
 const isDrawing = ref(false);
+let predictionInterval = null;
 
 onMounted(() => {
     initCanvas();
@@ -65,6 +67,14 @@ function clearCanvas() {
 function startDrawing(e) {
     isDrawing.value = true;
     draw(e);
+    // Start interval for prediction every 500ms
+    if (!predictionInterval) {
+        predictionInterval = setInterval(() => {
+            const imageData = ctx.getImageData(0, 0, 28, 28);
+            const pixels = new Float32Array(28 * 28);
+            emit('input', { imageData, pixels });
+        }, predictDelayMs.value);
+    }
 }
 
 function stopDrawing() {
@@ -76,9 +86,13 @@ function stopDrawing() {
     isDrawing.value = false;
     ctx.beginPath();
 
+    // Stop interval and run prediction one last time
+    if (predictionInterval) {
+        clearInterval(predictionInterval);
+        predictionInterval = null;
+    }
     const imageData = ctx.getImageData(0, 0, 28, 28);
     const pixels = new Float32Array(28 * 28);
-
     emit('input', { imageData, pixels });
 }
 

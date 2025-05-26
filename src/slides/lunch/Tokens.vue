@@ -102,6 +102,8 @@ article {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    padding: 0 160px;
 }
 h1 {
     text-align: center;
@@ -115,8 +117,11 @@ input {
 .tokens {
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
     gap: 0.5em;
     margin-top: 1em;
+
+    min-height: 140px;
 
     .subword-group {
         display: flex;

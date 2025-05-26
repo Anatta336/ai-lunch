@@ -11,19 +11,19 @@
             <img src="@/assets/images/pre-training.png" alt="Pre-training" />
             <ul>
                 <li>
-                    You're given a large amount of written content to learn from.
+                    The model is given a large amount of written content to learn from.
                 </li>
                 <li>
-                    You learn the text by being shown a block of text with some tokens removed, and you're asked to guess what should be there.
+                    It learns the text by being shown a block of text with some tokens removed, and asked to guess what should be there.
                     <ul>
                         <li>"The capital of ___ is Paris."</li>
                         <li>"Evan cried out in ___ when he saw he'd won the lottery."</li>
-                        <li>"The glass ___ on the floor when it fell from the table."</li>
+                        <li>"The glass ___ after the cat pushed it off the table."</li>
                         <li>"$total = $unitCost * ___;"</li>
                     </ul>
                 </li>
                 <li>
-                    The weights of your neural network are adjusted until you usually get the missing tokens right.
+                    The weights in the model are adjusted until it usually gets the missing tokens right.
                     <ul>
                         <li>This is repeated trillions of times to cover all the training text.</li>
                     </ul>
@@ -40,6 +40,8 @@ article {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    padding: 0 160px;
 
     .content > ul > li {
         margin-bottom: 1.3rem;

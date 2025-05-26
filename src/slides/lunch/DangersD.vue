@@ -7,7 +7,7 @@
             <img src="@/assets/images/trigeminal-ai.png" alt="Open AI generating an incorrect neuro-anatomy diagram" />
             <img src="@/assets/images/trigeminal-real.png" alt="A basic but accurate diagram from mqneurosurgery.com.au" />
         </div>
-        <p>Knowing how this image generation works, it was very unlikely to get an anatomical diagram correct. But the system still offered to create it.</p>
+        <p>Knowing how this image generation works, it was very unlikely to get an anatomical diagram correct. But the system still confidently offered to create it.</p>
     </article>
 </template>
 <style lang="scss" scoped>
