@@ -21,7 +21,6 @@ import ReinforcementLearningHumanFeedback from './slides/lunch/ReinforcementLear
 import ChatbotBehindScenes from './slides/lunch/ChatbotBehindScenes.vue';
 import ChatbotExample from './slides/lunch/ChatbotExample.vue';
 import LlmCharacteristics from './slides/lunch/LlmCharacteristics.vue';
-import UsageExamples from './slides/lunch/UsageExamples.vue';
 import Economics from './slides/lunch/Economics.vue';
 import DangersPre from './slides/lunch/DangersPre.vue';
 import DangersA from './slides/lunch/DangersA.vue';
@@ -29,6 +28,13 @@ import DangersB from './slides/lunch/DangersB.vue';
 import DangersC from './slides/lunch/DangersC.vue';
 import DangersD from './slides/lunch/DangersD.vue';
 import IdentifyingUse from './slides/lunch/IdentifyingUse.vue';
+import LlmLifecycle from './slides/lunch/LlmLifecycle.vue';
+import Tokens from './slides/lunch/Tokens.vue';
+import Reasoning from './slides/lunch/Reasoning.vue';
+import Workflows from './slides/lunch/Workflows.vue';
+import Agents from './slides/lunch/Agents.vue';
+import UsageExamplesIndividual from './slides/lunch/UsageExamplesIndividual.vue';
+import UsageExamplesBusiness from './slides/lunch/UsageExamplesBusiness.vue';
 </script>
 
 <template>
@@ -43,31 +49,38 @@ import IdentifyingUse from './slides/lunch/IdentifyingUse.vue';
             :slides="[
                 Title,
                 Definitions,
-                Takeaways,
+                // Takeaways,
 
-                FlowPerception,
-                // NotebookLM audio.
+                // FlowPerception,
+                // NotebookLM audio?
 
                 MachineLearningIntro,
                 NumberConvolutionInside,
                 Weights,
                 Training,
                 ModelLifecycle,
-                ArchitectureComparison,
-                ArtificialNeuralNetworks,
+                // ArchitectureComparison,
+                // ArtificialNeuralNetworks,
 
+                LlmLifecycle,
                 BeingAnLlm,
+                Tokens,
                 BeingAnLlmPreTrainingA,
-                BeingAnLlmPreTrainingB,
+                // BeingAnLlmPreTrainingB,
                 SupervisedFineTuning,
                 ReinforcementLearningHumanFeedback,
                 ChatbotExample,
                 ChatbotBehindScenes,
 
                 LlmCharacteristics,
-                UsageExamples,
+                Reasoning,
+                Workflows,
+                Agents,
+
+                UsageExamplesBusiness,
+                UsageExamplesIndividual,
+
                 Economics,
-                DangersPre,
                 DangersA,
                 DangersB,
                 DangersC,

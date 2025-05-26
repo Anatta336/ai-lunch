@@ -85,6 +85,8 @@ onMounted(() => {
 
     requestAnimationFrame(() => {
         prepareLineSets();
+
+        mouseOverOutput.value = 1;
     });
 });
 
@@ -152,6 +154,7 @@ onMounted(() => {
 </template>
 <style lang="scss" scoped>
 article {
+    text-wrap: pretty;
     display: flex;
     flex-direction: column;
     justify-content: center;

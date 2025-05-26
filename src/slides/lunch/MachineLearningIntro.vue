@@ -13,8 +13,9 @@
                 The computer "learns" rules for itself based on those examples.
             </li>
             <li>
-                The recent widely known advances in AI have been around Large Language Models and Diffusion Models, which are all examples of machine learning being used for generation of text and images.
+                The recent widely known advances in AI have been around large language models and image diffusion models.
                 <ul>
+                    <li>Machine learning being used for generation of text and images, rather than classifying input.</li>
                     <li>Known as generative AI.</li>
                 </ul>
             </li>
@@ -23,6 +24,7 @@
 </template>
 <style lang="scss" scoped>
 article {
+    text-wrap: pretty;
     display: flex;
     flex-direction: column;
     justify-content: center;

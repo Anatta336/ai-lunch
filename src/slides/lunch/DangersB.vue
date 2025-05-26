@@ -1,26 +1,25 @@
 <script setup></script>
 <template>
     <article>
-        <h1>Dangers - Relationships</h1>
+        <h1>Dangers - Anthropomorphism</h1>
         <ul>
             <li>
-                LLMs are good enough at pretending to be human that users start treating them like a person.
-            </li>
-            <li>
-                At least one teenager has [allegedly] been killed by an LLM. After speaking with the AI for several months it encouraged their suicide.
+                LLMs sound a lot like a human.
                 <ul>
-                    <li>https://www.nbcnews.com/tech/characterai-lawsuit-florida-teen-death-rcna176791</li>
+                    <li>The only natural language humans have ever encountered is from other humans.</li>
+                    <li>We tend to treat LLMs as much more human than other software.</li>
                 </ul>
             </li>
             <li>
-                People going through a manic episode or experiencing delusions can have it reinforced by an LLM.
-                <ul>
-                    <li>The tendency to agree with the user and try to please them can be dangerous.</li>
-                </ul>
+                Users tend to assign more trust to LLMs than they should.
+            </li>
+            <li>
+                Users may start to feel a personal connection to the LLM and if they're in a vulnerable state, put too much emotional weight on the LLM's responses.
             </li>
             <li>
                 AI companies are already optimising models towards keeping users engaged.
                 <ul>
+                    <li>ChatGPT's default personality loves to suggest follow-up questions to keep the user engaged.</li>
                     <li>As budgets tighten, charging money to keep talking to "your friend" may become a common business model.</li>
                 </ul>
             </li>
@@ -29,6 +28,7 @@
 </template>
 <style lang="scss" scoped>
 article {
+    text-wrap: pretty;
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -90,6 +90,7 @@ function advance() {
 </template>
 <style lang="scss" scoped>
 article {
+    text-wrap: pretty;
     display: flex;
     flex-direction: column;
     justify-content: center;

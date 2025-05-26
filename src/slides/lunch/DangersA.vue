@@ -39,12 +39,13 @@
 </template>
 <style lang="scss" scoped>
 article {
+    text-wrap: pretty;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    padding: 0 80px;
+    padding: 0 120px;
 
     > ul > li {
         margin-bottom: 2rem;

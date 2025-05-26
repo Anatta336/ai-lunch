@@ -1,15 +1,21 @@
 <script setup></script>
 <template>
     <article>
-        <h1>Standard Machine Learning Lifecycle</h1>
+        <h1>Large Language Model Lifecycle</h1>
         <figure>
             <div class="set">
                 <h2>Training</h2>
-                <ul>
-                    <li>Feeding in lots of example data.</li>
-                    <li>Sets weights (a.k.a. parameters) of the model until it can predict mostly correctly.</li>
-                </ul>
-                <p>Training a small model is cheap, but needs a lot of data.</p>
+
+                <div class="set">
+                    Pre-training
+                </div>
+                <div class="set">
+                    Supervised fine-tuning
+                </div>
+                <div class="set">
+                    Reinforcement learning from human feedback
+                </div>
+                <p>Training LLMs is very expensive.</p>
             </div>
             <div class="arrow">
                 →
@@ -18,11 +24,11 @@
                 <h2>Inference</h2>
 
                 <ul>
-                    <li>Actually using the model.</li>
-                    <li>Giving an input and receiving an output.</li>
-                    <li>Doesn't change the model.</li>
-                    <li>The model is <strong>not</strong> learning during use.</li>
+                    <li>Provide prompt and context.</li>
+                    <li>Model generates suitable text response.</li>
+                    <li>The model is still <strong>not</strong> learning during use.</li>
                 </ul>
+                <p>Developing software that uses LLMs is mostly about giving the right prompt and context.</p>
             </div>
         </figure>
     </article>
@@ -83,6 +89,9 @@ figure {
     .set {
         background-color: #4ba194;
         flex: 1 0 300px;
+
+        text-align: center;
+
         .set {
             background-color: #755026;
             .set {

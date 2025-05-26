@@ -32,6 +32,9 @@ import trainingNine from '../../assets/images/training-nine.png';
                 </ul>
             </li>
             <li>
+                A small model like this was trained in a few minutes on my PC.
+            </li>
+            <li>
                 The training data <strong>is not</strong> stored by the model.
                 <ul>
                     <li>
@@ -47,6 +50,7 @@ import trainingNine from '../../assets/images/training-nine.png';
 </template>
 <style lang="scss" scoped>
 article {
+    text-wrap: pretty;
     display: flex;
     flex-direction: column;
     justify-content: center;

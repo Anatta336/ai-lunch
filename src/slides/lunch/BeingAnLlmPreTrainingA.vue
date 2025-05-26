@@ -11,14 +11,6 @@
             <img src="@/assets/images/pre-training.png" alt="Pre-training" />
             <ul>
                 <li>
-                    Everything you deal with is handled as "tokens".
-                    <ul>
-                        <li>Some words are multiple tokens.</li>
-                        <li>Punctuation marks and some special marks are also tokens.</li>
-                        <li>10,000 words would be around 15,000 tokens.</li>
-                    </ul>
-                </li>
-                <li>
                     You're given a large amount of written content to learn from.
                 </li>
                 <li>
@@ -42,6 +34,7 @@
 </template>
 <style lang="scss" scoped>
 article {
+    text-wrap: pretty;
     padding: 30px;
     display: flex;
     flex-direction: column;
