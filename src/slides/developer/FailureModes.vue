@@ -4,7 +4,7 @@
         <h1>When LLMs Go Wrong</h1>
         <ul>
             <li>LLMs hate to say "I can't do that" and will always try.</li>
-            <li>They're trained to <em>sound like they're right</em>.
+            <li>They're trained to <strong>sound authoritative</strong> and <strong>confident</strong>, even if they're wrong.
                 <ul>
                     <li>Often they sound right because they are.</li>
                     <li>Sometimes they're just doing a really good impression of someone who knows what's going on.</li>
@@ -16,9 +16,10 @@
                     <li>The LLM making guesses like this is often a sign it lacks necessary context.</li>
                 </ul>
             </li>
-            <li>A common sign an coding agent is in trouble is when it keeps writing more and more code.
+            <li>A common symptom of a coding agent in trouble is when it keeps writing more and more code.
                 <ul>
-                    <li>LLMs usually solve problems by adding more code, which can add more problems.</li>
+                    <li>Even if the code works, it's often possible to simplify it.</li>
+                    <li>Augment itself can do this, just prompt it to do so.</li>
                 </ul>
             </li>
         </ul>
@@ -33,7 +34,7 @@ article {
     justify-content: center;
     align-items: center;
 
-    padding: 0 100px;
+    padding: 0 160px;
 
     > ul > li {
         margin-bottom: 2rem;

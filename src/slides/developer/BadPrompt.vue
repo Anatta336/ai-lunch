@@ -6,7 +6,7 @@
         <ul>
             <li>Even a human would find this unworkable without more information.</li>
             <li>Not clear what the bug is, or how we want it to work once fixed.</li>
-            <li>The LLM cannot see the page so will have to guess what's wrong with the button layout.</li>
+            <li>Remember the LLM cannot (currently) see the page itself so will have to guess what's wrong with the button layout.</li>
             <li>Combining two unrelated changes.</li>
         </ul>
     </article>
@@ -20,7 +20,7 @@ article {
     justify-content: center;
     align-items: center;
 
-    padding: 0 100px;
+    padding: 0 180px;
 
     > ul > li {
         margin-bottom: 2rem;

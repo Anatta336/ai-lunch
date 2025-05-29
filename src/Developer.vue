@@ -7,10 +7,16 @@ import ContextBuilding from './slides/developer/ContextBuilding.vue';
 import FailureModes from './slides/developer/FailureModes.vue';
 import Iterative from './slides/developer/Iterative.vue';
 import Title from './slides/developer/Title.vue';
-import WhatLlmsDo from './slides/developer/WhatLlmsDo.vue';
-import ModelLifecycle from './slides/developer/ModelLifecycle.vue';
+import LlmsA from './slides/developer/LlmsA.vue';
 import NumberConvolutionInside from './slides/developer/NumberConvolutionInside.vue';
 import Caution from './slides/developer/Caution.vue';
+import LlmLifecycle from './slides/developer/LlmLifecycle.vue';
+import LlmInput from './slides/developer/LlmInput.vue';
+import CodeQuality from './slides/developer/CodeQuality.vue';
+import ModeAutoComplete from './slides/developer/ModeAutoComplete.vue';
+import ModeChat from './slides/developer/ModeChat.vue';
+import ModeAgent from './slides/developer/ModeAgent.vue';
+import Tips from './slides/developer/Tips.vue';
 </script>
 
 <template>
@@ -24,15 +30,21 @@ import Caution from './slides/developer/Caution.vue';
             class="slide"
             :slides="[
                 Title,
-                WhatLlmsDo,
-                ModelLifecycle,
+                LlmsA,
+                LlmLifecycle,
+                CodeQuality,
+                ModeAutoComplete,
+                ModeChat,
+                ModeAgent,
+                LlmInput,
+                ContextBuilding,
                 BadPrompt,
                 BetterPrompt,
-                ContextBuilding,
                 FailureModes,
                 Iterative,
                 Caution,
-                NumberConvolutionInside
+                Tips,
+                NumberConvolutionInside,
             ]"
         />
     </FixedSize>

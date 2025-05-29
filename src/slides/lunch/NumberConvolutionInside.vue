@@ -99,7 +99,7 @@ async function getPrediction({ imageData, pixels }) {
                 v-for="(layer, index) in layers"
                 :key="index"
                 :layer="layer"
-                :node-size="index == layers.length - 1 ? 20 : 8"
+                :node-size="index == layers.length - 1 ? 20 : (layer.isFlat ? 16 : 9)"
             />
             <div class="result">
                 {{ finalResult }}

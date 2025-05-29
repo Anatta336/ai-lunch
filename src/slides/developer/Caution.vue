@@ -5,13 +5,13 @@
         <ul>
             <li>LLMs are especially good at writing subtle bugs.
                 <ul>
-                    <li>Think of AI image generation that looks good as a whole, but the details are wrong.</li>
+                    <li>Think of AI generated images that looks good as a whole, but the details are wrong.</li>
                 </ul>
             </li>
             <li>You must understand the code.
                 <ul>
-                    <li>You are still responsible for what the LLM writes.</li>
-                    <li>It can be a great stepping off point for learning, but don't skip the learning part.</li>
+                    <li>You are still responsible for the code you write using Augment.</li>
+                    <li>It can be a great tool for learning, but don't skip the learning part.</li>
                 </ul>
             </li>
             <li>Do not assume the AI knows better.
@@ -31,7 +31,7 @@ article {
     justify-content: center;
     align-items: center;
 
-    padding: 0 100px;
+    padding: 0 160px;
 
     > ul > li {
         margin-bottom: 2rem;

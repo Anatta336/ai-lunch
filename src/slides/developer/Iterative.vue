@@ -10,11 +10,15 @@
                 </ul>
             </li>
             <li>Start reviewing code as soon as it writes it.</li>
-            <li>If you don't understand why it made a change, ask it.
-                <ul><li>Remember, it is trained to sound like it knows what it's doing. Remain critical.</li></ul>
+            <li>If you don't understand why it made a change, ask it to explain the code.
+                <ul>
+                    <li>Remember, it is trained to sound like it knows what it's doing.</li>
+                    <li>You're still the developer.</li>
+                    <li>Remain critical.</li>
+                </ul>
             </li>
             <li>Tell it about edge-cases you spot.</li>
-            <li>If it is seriously wrong start a new session to clear context.
+            <li>If it has gone wrong start a new session to clear context.
                 <ul>
                     <li>Start fresh with a prompt that directs away from this bad path.</li>
                     <li>Keeping the same "conversation" going will include all the wrong context that'll confuse it.</li>
@@ -32,7 +36,7 @@ article {
     justify-content: center;
     align-items: center;
 
-    padding: 0 100px;
+    padding: 0 160px;
 
     > ul > li {
         margin-bottom: 2rem;

@@ -80,7 +80,7 @@ const borderRadius = computed(() => {
                 :key="`${rowIndex}|${itemIndex}`"
                 class="dot"
                 :style="{
-                    opacity: 0.10 + (item * 0.90),
+                    opacity: 0.10 + (item * 0.93),
                     width: `${props.dotSize}px`,
                     height: `${props.dotSize}px`,
                     borderRadius: `${borderRadius}`,
@@ -102,6 +102,6 @@ const borderRadius = computed(() => {
     flex-wrap: nowrap;
 }
 .dot {
-    background-color: #cfffcc;
+    background-color: #fffcd6;
 }
 </style>
