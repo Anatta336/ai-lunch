@@ -4,19 +4,18 @@ import SlideChanger from './components/SlideChanger.vue';
 import BadPrompt from './slides/developer/BadPrompt.vue';
 import BetterPrompt from './slides/developer/BetterPrompt.vue';
 import ContextBuilding from './slides/developer/ContextBuilding.vue';
-import FailureModes from './slides/developer/FailureModes.vue';
 import Iterative from './slides/developer/Iterative.vue';
 import Title from './slides/developer/Title.vue';
 import LlmsA from './slides/developer/LlmsA.vue';
 import NumberConvolutionInside from './slides/developer/NumberConvolutionInside.vue';
-import Caution from './slides/developer/Caution.vue';
 import LlmLifecycle from './slides/developer/LlmLifecycle.vue';
 import LlmInput from './slides/developer/LlmInput.vue';
-import CodeQuality from './slides/developer/CodeQuality.vue';
-import ModeAutoComplete from './slides/developer/ModeAutoComplete.vue';
-import ModeChat from './slides/developer/ModeChat.vue';
-import ModeAgent from './slides/developer/ModeAgent.vue';
-import Tips from './slides/developer/Tips.vue';
+import ExampleSqlPerformance from './slides/developer/ExampleSqlPerformance.vue';
+import ExampleWellDefinedChanges from './slides/developer/ExampleWellDefinedChanges.vue';
+import ExampleTests from './slides/developer/ExampleTests.vue';
+import ExampleLearning from './slides/developer/ExampleLearning.vue';
+import CodeAssistModes from './slides/developer/CodeAssistModes.vue';
+import LlmPsychology from './slides/developer/LlmPsychology.vue';
 </script>
 
 <template>
@@ -32,18 +31,17 @@ import Tips from './slides/developer/Tips.vue';
                 Title,
                 LlmsA,
                 LlmLifecycle,
-                CodeQuality,
-                ModeAutoComplete,
-                ModeChat,
-                ModeAgent,
-                LlmInput,
+                LlmPsychology,
+                CodeAssistModes,
                 ContextBuilding,
+                LlmInput,
                 BadPrompt,
                 BetterPrompt,
-                FailureModes,
                 Iterative,
-                Caution,
-                Tips,
+                ExampleSqlPerformance,
+                ExampleWellDefinedChanges,
+                ExampleTests,
+                ExampleLearning,
                 NumberConvolutionInside,
             ]"
         />

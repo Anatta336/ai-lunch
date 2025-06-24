@@ -15,7 +15,7 @@
                 <div class="set">
                     Reinforcement learning from human feedback
                 </div>
-                <p>Training LLMs is very expensive. Augment's main model was trained by <em>Anthropic</em> (a separate company) at significant cost. It's general purpose and can understand things outside of pure code.</p>
+                <p>Training LLMs is very expensive. Augment's main model was trained by Anthropic at significant cost. It's general purpose and can do many things other than write code.</p>
             </div>
             <div class="arrow">
                 →
@@ -25,10 +25,10 @@
 
                 <ul>
                     <li>Provide prompt and context.</li>
-                    <li>Model generates suitable text response.</li>
-                    <li>The model is still <strong>not</strong> learning during use.</li>
+                    <li>Model generates a response which might activating its tools, editing files, or writing a message to the user.</li>
+                    <li>The model is <strong>not</strong> learning during use.</li>
                 </ul>
-                <p>Using an LLM effectively is about giving the right prompt and context.</p>
+                <p>Using an LLM effectively is about giving it the right input.</p>
             </div>
         </figure>
     </article>

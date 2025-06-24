@@ -4,12 +4,12 @@
         <h1>Feeding the Beast</h1>
         <ul>
             <li>Along with our prompt, the LLM is given <strong>context</strong> to help it understand the code.</li>
-            <li>Augment working well is all about finding the right context and feeding it into the LLM.</li>
-            <li>It's able to find things itself, but any references and starting points we give will help.</li>
+            <li>Augment works well when it has good information to feed into the LLM.</li>
+            <li>It's able to find things itself, but accurate starting points help a lot.</li>
             <li>
                 LLMs are more likely to <strong>hallucinate</strong> if we don't give them the context they need.
                 <ul>
-                    <li>LLMs are very bad at admitting they cannot do something and will produce something - even if its nonsense.</li>
+                    <li>They will always produce something - even if it is nonsense.</li>
                 </ul>
             </li>
             <li>Giving <em>too much</em> context also causes problems.

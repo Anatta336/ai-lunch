@@ -2,7 +2,9 @@
 <template>
     <article>
         <h1>Poor Prompting</h1>
-        <p>&quot;The user page is bugged can you fix it and make the button layout work better on mobile too.&quot;</p>
+        <p class="prompt">
+            &quot;The user update page is bugged can you fix it and the button layout<br>doesn't fit on mobile.&quot;
+        </p>
         <ul>
             <li>Even a human would find this unworkable without more information.</li>
             <li>Not clear what the bug is, or how we want it to work once fixed.</li>
@@ -24,6 +26,13 @@ article {
 
     > ul > li {
         margin-bottom: 2rem;
+    }
+
+    .prompt {
+        background-color: #455e80;
+        padding: 10px 20px;
+        border-radius: 10px;
+        text-align: center;
     }
 }
 </style>

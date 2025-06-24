@@ -5,11 +5,10 @@
         <ul>
             <li><strong>Large Language Models</strong> (LLMs) are the technology behind services like ChatGPT and coding assistants like Augment.</li>
             <li>Trained on huge amounts of text, mostly pulled from the internet.</li>
-            <li>From that training they have learnt to generate text, including code and answers to questions.</li>
+            <li>From that training they have learnt many things including how to follow instructions, answer questions, and write code.</li>
             <li>The LLM has an imperfect "memory" of everything it saw during training.</li>
-            <li>It's better at things that show up more often in its original training data.</li>
-            <!-- <li>It has more accurate access to information in its <strong>Context Window</strong>.</li>
-            <li>Don't try to replace your knowledge and experience with an LLM, but do let it speed you up.</li> -->
+            <li>An LLM can <strong>almost</strong> do almost anything.</li>
+            <li>Possibly the biggest change in what computers can do since the internet.</li>
         </ul>
     </article>
 </template>

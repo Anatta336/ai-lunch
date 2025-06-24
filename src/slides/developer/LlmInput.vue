@@ -1,9 +1,8 @@
 <script setup></script>
 <template>
     <article>
+        <h1>Input to the LLM</h1>
         <figure>
-            <div class="set">
-                <h2>Input to the LLM</h2>
 
                 <div class="set">
                     <h2>Directly from us</h2>
@@ -39,7 +38,6 @@
                     Augment's agent will read your question and try to find sources of relevant information to help it answer.
                 </div>
 
-            </div>
         </figure>
     </article>
 </template>
@@ -65,6 +63,13 @@ ul {
     text-shadow: #fff3ed 1px 0px 0px, #fff3ed -1px 0px 0px, #fff3ed 0px 1px 0px, #fff3ed 0px -1px 0px
 }
 
+figure {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 0 20px;
+}
+
 .set {
     border-radius: 20px;
 
@@ -80,6 +85,9 @@ ul {
     justify-content: center;
     gap: 10px;
 
+    flex: 1 0 300px;
+    text-align: center;
+
     h2 {
         flex: 1 0 100%;
         text-align: center;
@@ -93,9 +101,7 @@ ul {
     background-color: #455e80;
     .set {
         background-color: #4ba194;
-        flex: 1 0 300px;
 
-        text-align: center;
 
         .set {
             background-color: #5f2e7e;

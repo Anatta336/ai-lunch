@@ -1,7 +1,7 @@
 <script setup></script>
 <template>
     <article>
-        <h1>Leading the Conversation</h1>
+        <h1>Keeping a Tight Leash</h1>
         <ul>
             <li>Read what the LLM is writing while it "thinks" to monitor it.
                 <ul>
