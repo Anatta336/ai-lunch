@@ -16,6 +16,7 @@ import ExampleTests from './slides/developer/ExampleTests.vue';
 import ExampleLearning from './slides/developer/ExampleLearning.vue';
 import CodeAssistModes from './slides/developer/CodeAssistModes.vue';
 import LlmPsychology from './slides/developer/LlmPsychology.vue';
+import Conclusions from './slides/developer/Conclusions.vue';
 </script>
 
 <template>
@@ -38,10 +39,11 @@ import LlmPsychology from './slides/developer/LlmPsychology.vue';
                 BadPrompt,
                 BetterPrompt,
                 Iterative,
-                ExampleSqlPerformance,
                 ExampleWellDefinedChanges,
+                ExampleSqlPerformance,
                 ExampleTests,
                 ExampleLearning,
+                Conclusions,
                 NumberConvolutionInside,
             ]"
         />

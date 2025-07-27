@@ -12,7 +12,8 @@ import FixedSize from './components/FixedSize.vue';
         <div class="slide">
             <nav class="nav-links">
                 <a href="/lunch">Lunch and Learn</a>
-                <a href="/developer">AI Assistants for Developers</a>
+                <a href="/developer">Developers - Phase 1</a>
+                <a href="/developer-discussion">Developers - Phase 2</a>
             </nav>
         </div>
     </FixedSize>
