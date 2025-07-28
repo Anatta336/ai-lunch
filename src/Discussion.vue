@@ -6,7 +6,7 @@ import Attachments from './slides/discussion/Attachments.vue';
 import ExploringProject from './slides/discussion/ExploringProject.vue';
 import Planning from './slides/discussion/Planning.vue';
 import Feedback from './slides/discussion/Feedback.vue';
-import CuttingLosses from './slides/discussion/CuttingLosses.vue';
+import CuttingLosses from './slides/discussion/HandlingProblems.vue';
 </script>
 
 <template>
@@ -20,11 +20,11 @@ import CuttingLosses from './slides/discussion/CuttingLosses.vue';
             class="slide"
             :slides="[
                 Title,
+                Feedback,
                 Attachments,
                 ExploringProject,
                 Planning,
                 CuttingLosses,
-                Feedback,
             ]"
         />
     </FixedSize>
