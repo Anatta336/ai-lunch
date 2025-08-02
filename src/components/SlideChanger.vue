@@ -10,6 +10,7 @@ const emit = defineEmits(['change-slide']);
 const slideIndex = ref(0);
 const currentSlide = computed(() => props.slides[slideIndex.value]);
 const cachedTitles = ref(new Map());
+const isLoadingTitles = ref(false);
 
 watch(slideIndex, (newIndex, oldIndex) => {
     emit('change-slide', {
@@ -33,8 +34,11 @@ function extractCurrentSlideTitle(index) {
         if (slideWrapper) {
             const h1Elements = slideWrapper.querySelectorAll('h1');
             if (h1Elements.length > 0) {
-                // Get the first h1's text content
-                const title = h1Elements[0].textContent?.trim();
+                const title = Array.from(h1Elements)
+                    .map(el => el.textContent?.trim())
+                    .filter(Boolean)
+                    .join(' ');
+
                 if (title) {
                     cachedTitles.value.set(index, title);
                 }
@@ -77,14 +81,12 @@ const slideLabels = computed(() => {
 onMounted(() => {
     window.addEventListener('keydown', onKeydown);
 
-    // Extract title from the initial slide
     nextTick(() => {
         extractCurrentSlideTitle(slideIndex.value);
 
-        // Optionally extract all titles in the background (after a delay)
         setTimeout(() => {
             extractAllTitles();
-        }, 1000);
+        }, 300);
     });
 });
 
@@ -112,6 +114,7 @@ function goToSlide(index) {
 // Function to quickly visit all slides to extract their h1 titles
 async function extractAllTitles() {
     const originalIndex = slideIndex.value;
+    isLoadingTitles.value = true;
 
     for (let i = 0; i < props.slides.length; i++) {
         if (!cachedTitles.value.has(i)) {
@@ -123,10 +126,19 @@ async function extractAllTitles() {
     }
 
     slideIndex.value = originalIndex;
+    isLoadingTitles.value = false;
 }
 </script>
 <template>
     <div class="slide-wrapper">
+
+        <div v-if="isLoadingTitles" class="loading-overlay">
+            <div class="loading-message">
+                <div class="loading-spinner"></div>
+                <span>Preparing Slides...</span>
+            </div>
+        </div>
+
         <div
             class="control left"
             @click="slideIndex = Math.max(slideIndex - 1, 0)"
@@ -146,7 +158,6 @@ async function extractAllTitles() {
                 :title="label"
             >
                 <div class="nav-item-content">
-                    <span class="nav-number">{{ index + 1 }}</span>
                     <span class="nav-label">{{ label }}</span>
                 </div>
             </div>
@@ -189,27 +200,29 @@ async function extractAllTitles() {
 
     .navigation-panel {
         position: absolute;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
+        bottom: 5px;
+        left: 5px;
+        width: calc(60px * 8 + 6px * 7 + 6px * 2);
         display: flex;
-        gap: 8px;
+        gap: 6px;
         z-index: 10;
         opacity: 0;
         transition: opacity 0.3s ease;
-        max-width: 80%;
         overflow-x: auto;
-        padding: 10px;
+        padding: 6px;
         background-color: rgba(0, 0, 0, 0.6);
-        border-radius: 8px;
+        border-radius: 5px;
         backdrop-filter: blur(5px);
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
 
         &:hover {
             opacity: 1;
         }
 
         .nav-item {
-            min-width: 60px;
+            width: 60px;
             height: 50px;
             background-color: rgba(255, 255, 255, 0.1);
             border: 2px solid transparent;
@@ -238,20 +251,13 @@ async function extractAllTitles() {
                 gap: 2px;
                 padding: 4px;
 
-                .nav-number {
-                    font-size: 12px;
-                    font-weight: bold;
-                    color: rgba(255, 255, 255, 0.9);
-                }
-
                 .nav-label {
                     font-size: 10px;
                     color: rgba(255, 255, 255, 0.7);
                     text-align: center;
-                    max-width: 80px;
+                    max-width: 100%;
                     overflow: hidden;
                     text-overflow: ellipsis;
-                    white-space: nowrap;
                     line-height: 1.1;
                 }
             }
@@ -271,6 +277,44 @@ async function extractAllTitles() {
             background: rgba(255, 255, 255, 0.3);
             border-radius: 2px;
         }
+    }
+
+    .loading-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(0, 0, 0);
+        backdrop-filter: blur(5px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 100;
+
+        .loading-message {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+
+            .loading-spinner {
+                width: 40px;
+                height: 40px;
+                border: 3px solid rgba(255, 255, 255, 0.3);
+                border-top: 3px solid white;
+                border-radius: 50%;
+                animation: spin 1s linear infinite;
+            }
+        }
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
     }
 }
 </style>
