@@ -12,7 +12,9 @@
             <li>
                 It's still not settled what the best uses are.
                 <ul>
+                    <li>LLMs can do almost anything at a mediorce level.</li>
                     <li>Reliable business models haven't been established yet.</li>
+                    <li>Coding assistants are proven effective, but steep competition and high running costs make for a risky business.</li>
                 </ul>
             </li>
             <li>

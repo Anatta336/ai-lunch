@@ -84,7 +84,7 @@ async function getPrediction({ imageData, pixels }) {
         <h1
             style="margin: 0;"
         >
-            Machine Learning for Handwriting Recognition
+            Handwriting Recognition
         </h1>
 
         <div class="columns">

@@ -1,7 +1,7 @@
 <script setup></script>
 <template>
     <article>
-        <h1>Standard Machine Learning Lifecycle</h1>
+        <h1>Machine Learning Lifecycle</h1>
         <figure>
             <div class="set">
                 <h2>Training</h2>

@@ -4,10 +4,10 @@
         <h1>Agents</h1>
         <ul>
             <li>
-                Add self-checking and loops to a workflow, and you've built an agent.
+                Rather than the pre-defined steps of a workflow, an "agent" is an LLM that decides what it'll do next.
             </li>
             <li>
-                Agents are often combined with "tool use" where the LLM is is given a list of programs it can use.
+                By giving the LLM access to a set of tools it can choose which to use, and use the results of those tools to decide its next steps.
                 <ul>
                     <li>
                         Rather than the LLM trying to do things it's bad at like calculating numbers, it can use a much faster and more accurate calculator tool.
@@ -15,15 +15,15 @@
                 </ul>
             </li>
             <li>
-                There's lots of exciting possibilities with agents, but they are still in the early stages.
+                There's lots of exciting possibilities with agents, and they're doing very useful things when properly supervised.
                 <ul>
                     <li>
-                        The hope is to be able to make fully autonomous agents, but they go wrong often enough that they still need human supervision for practical tasks.
+                        People like to get excited about fully autonomous agents, but for now they almost always get stuck or go wrong.
                     </li>
                 </ul>
             </li>
             <li>
-                Agents that write computer code are one of the more successful cases.
+                Agents that help a developer write computer code are one of the more successful cases.
             </li>
         </ul>
     </article>

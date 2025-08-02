@@ -5,7 +5,7 @@
             <div class="set">
                 <h2>Classical programming</h2>
                 <p>
-                    This covers almost everything we do in software and web development,
+                    Almost everything we do in software and web development,
                     and how we generally interact with computers.
                 </p>
             </div>
@@ -14,12 +14,18 @@
                 <h2>Machine learning</h2>
 
                 <div class="set">
-                    <h2>Speech recognition</h2>
+                    <h2>Recognition</h2>
+                    <ul>
+                        <li>Transcription</li>
+                        <li>Identifying birds by their call</li>
+                        <li>Spotting Russian tanks</li>
+                    </ul>
                 </div>
 
                 <div class="set">
                     <h2>Prediction</h2>
                     <ul>
+                        <li>YouTube recommendations</li>
                         <li>YouTube recommendations</li>
                     </ul>
                 </div>
@@ -39,7 +45,8 @@
                         <li>ChatGPT (OpenAI)</li>
                         <li>Claude (Anthropic)</li>
                         <li>Gemini (Google)</li>
-                        <li>LLama (Meta)</li>
+                        <li>Llama (Meta)</li>
+                        <li>Grok (xAI)</li>
                     </ul>
                 </div>
             </div>

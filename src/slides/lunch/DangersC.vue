@@ -1,7 +1,7 @@
 <script setup></script>
 <template>
     <article>
-        <h1>Dangers - Crime</h1>
+        <h1>Crime</h1>
         <ul>
             <li>
                 Automated scams

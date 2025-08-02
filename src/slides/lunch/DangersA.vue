@@ -1,7 +1,7 @@
 <script setup></script>
 <template>
     <article>
-        <h1>Dangers - Information</h1>
+        <h1>Intelligence Agencies</h1>
         <ul>
             <li>
                 Mass surveillance

@@ -1,59 +1,42 @@
 <script setup></script>
 <template>
     <article>
-        <h1>Workflows</h1>
+        <h1>LLM Demo</h1>
         <ul>
             <li>
-                An LLM on its own can be useful, but practical applications usually involve other tools.
+                The big models like those by ChatGPT need specialist hardware.
+            </li>
+            <li>
+                The smallest LLMs can be run on a laptop and even some phones.
                 <ul>
-                    <li>
-                        A "workflow" can be set up that combines an LLM with other services.
-                    </li>
+                    <li>They perform noticeably worse, but work the same way.</li>
                 </ul>
             </li>
         </ul>
         <figure>
             <div class="set user">
                 <h2>User</h2>
-                <p>Describes their dream kitchen.</p>
+                <p>Types in a prompt for the LLM.</p>
             </div>
             <div class="arrow">→</div>
             <div class="set llm">
                 <h2>LLM</h2>
-                <p>Extracts list of requirements for the kitchen.</p>
+                <p>Reads the prompt and generates a reply based on its built-in knowledge.</p>
             </div>
-
-            <div></div>
-            <div></div>
-            <div class="arrow">↓</div>
-
-
-            <div class="set llm">
-                <h2>LLM</h2>
-                <p>Builds description based on products found.</p>
-            </div>
-            <div class="arrow">←</div>
-            <div class="set database">
-                <h2>Database</h2>
-                <p>Finds products to match requirements.</p>
-            </div>
-
-            <div class="arrow">↓</div>
-            <div></div>
-            <div></div>
-
-
-            <div class="set expert-human">
-                <h2>Expert Human</h2>
-                <p>Reviews results and makes corrections.</p>
-            </div>
-            <div class="arrow">→</div>
-            <div class="set user">
-                <h2>User</h2>
-                <p>Receives plan and costing.</p>
-            </div>
-
         </figure>
+        <ul>
+            <li>
+                Note that LLMs can run without an internet connection.
+                <ul>
+                    <li>
+                        In practice most LLMs get connected up to external services to let them do more things.
+                    </li>
+                    <li>
+                        But your zombie apocalypse can have LLMs.
+                    </li>
+                </ul>
+            </li>
+        </ul>
     </article>
 </template>
 <style lang="scss" scoped>
@@ -66,10 +49,6 @@ article {
     align-items: center;
 
     padding: 0 80px;
-}
-
-ul {
-    margin-top: 10px;
 }
 
 figure {

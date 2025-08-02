@@ -35,7 +35,6 @@
                 <h2>Setup</h2>
                 <ul>
                     <li>Are we able to gather the information the LLM will need?</li>
-                    <li>How long does it take to gather that up and get it to the LLM?</li>
                 </ul>
             </div>
 

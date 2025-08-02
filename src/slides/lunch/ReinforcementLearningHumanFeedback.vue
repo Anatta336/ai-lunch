@@ -2,7 +2,8 @@
 <template>
     <article>
         <div class="content">
-            <h1>Reinforcement Learning from Human Feedback - RLHF</h1>
+            <h1>RLHF</h1>
+            <h2>Reinforcement Learning from Human Feedback</h2>
             <p>
                 The model practices its new skills, and is graded based on what humans think.
             </p>
@@ -49,6 +50,12 @@ article {
 }
 h1 {
     text-align: center;
+    margin-bottom: 0px;
+}
+h2 {
+    text-align: center;
+    font-size: 38px;
+    margin-top: 0px;
 }
 img {
     float: right;

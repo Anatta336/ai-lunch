@@ -1,20 +1,23 @@
 <script setup></script>
 <template>
     <article>
-        <h1>Dangers - Anthropomorphism</h1>
+        <h1>They Are Not People</h1>
         <ul>
             <li>
-                LLMs sound a lot like a human.
+                Fluent language has always been from humans or spiritual experiences.
                 <ul>
-                    <li>The only natural language humans have ever encountered is from other humans.</li>
-                    <li>We tend to treat LLMs as much more human than other software.</li>
+                    <li>Our fleshy brains tell us the computer is a person.</li>
                 </ul>
             </li>
             <li>
-                Users tend to assign more trust to LLMs than they should.
+                Users assign more trust to LLMs than they should.
+                <ul>
+                    <li>They are trained to sound confident and authoratitive, like someone selling you a supplement.</li>
+                    <li>This combines with our assumption that computers have access to facts.</li>
+                </ul>
             </li>
             <li>
-                Users may start to feel a personal connection to the LLM and if they're in a vulnerable state, put too much emotional weight on the LLM's responses.
+                The LLMs love to agree with you, even if they're agreeing with nonsense.
             </li>
             <li>
                 AI companies are already optimising models towards keeping users engaged.

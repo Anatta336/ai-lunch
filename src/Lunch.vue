@@ -31,6 +31,7 @@ import Workflows from './slides/lunch/Workflows.vue';
 import Agents from './slides/lunch/Agents.vue';
 import UsageExamplesIndividual from './slides/lunch/UsageExamplesIndividual.vue';
 import UsageExamplesBusiness from './slides/lunch/UsageExamplesBusiness.vue';
+import LlmDemo from './slides/lunch/LlmDemo.vue';
 </script>
 
 <template>
@@ -52,6 +53,8 @@ import UsageExamplesBusiness from './slides/lunch/UsageExamplesBusiness.vue';
                 Training,
                 ModelLifecycle,
 
+                LlmDemo,
+
                 LlmLifecycle,
                 BeingAnLlm,
                 Tokens,
@@ -69,14 +72,14 @@ import UsageExamplesBusiness from './slides/lunch/UsageExamplesBusiness.vue';
 
                 UsageExamplesBusiness,
                 UsageExamplesIndividual,
+                IdentifyingUse,
                 FlowPerception,
 
                 Economics,
                 DangersA,
-                DangersB,
                 DangersC,
                 DangersD,
-                IdentifyingUse,
+                DangersB,
 
                 Takeaways,
             ]"
